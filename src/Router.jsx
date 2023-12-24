@@ -5,17 +5,25 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import AddCar from './pages/AddCar'
 import SelectCar from './pages/SelectCar'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 
 const Router = () => {
   return (
     <BrowserRouter >
-      <Routes>
+    <Navbar />
+    <div className=' mt-16  '>
+    <Sidebar className="  "/>
+      <div className='ml-72  '>
+      <Routes className='columns-1 block' >
         <Route exact path='/' Component={Main}/>
         <Route exact path='/register' Component={Register}/>
         <Route exact path='/login' Component={Login}/>
         <Route exact path='/addcar' Component={AddCar}/>
         <Route exact path='/selectcar' Component={SelectCar}/>
       </Routes>
+      </div>
+    </div>
     </BrowserRouter>
   )
 }
