@@ -4,6 +4,7 @@ import { FaBarsStaggered, FaXmark  } from "react-icons/fa6";
 import { GoBellFill } from "react-icons/go";
 import { AiOutlinePlus } from "react-icons/ai";
 import { road24 } from '../img';
+import { Link } from 'react-router-dom';
 
 
 export default function Example() {
@@ -46,14 +47,13 @@ export default function Example() {
                   <span className="sr-only">View notifications</span>
                   <GoBellFill className="h-6 w-6" aria-hidden="true" />
                 </button>
-                <button
+                <Link to="/selectCar"
                   type="button"
                   className="relative rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
                   <AiOutlinePlus className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
