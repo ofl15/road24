@@ -3,7 +3,7 @@ import { Disclosure } from '@headlessui/react'
 import { FaBarsStaggered, FaXmark  } from "react-icons/fa6";
 import { GoBellFill } from "react-icons/go";
 import { AiOutlinePlus } from "react-icons/ai";
-import { road24 } from '../img';
+import { road, road24 } from '../img';
 import { Link } from 'react-router-dom';
 
 
@@ -30,7 +30,7 @@ export default function Example() {
                 <div className="flex flex-shrink-0 items-center text-xl">
                   <img
                     className="h-8 w-auto"
-                    src={road24}
+                    src={road}
                     alt="Your Company"
                   />
                 </div>
@@ -45,14 +45,14 @@ export default function Example() {
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">View notifications</span>
-                  <GoBellFill className="h-6 w-6" aria-hidden="true" />
+                  <GoBellFill className="h-6 w-6 text-white" aria-hidden="true" />
                 </button>
                 <Link to="/selectCar"
                   type="button"
                   className="relative rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="absolute -inset-1.5" />
-                  <AiOutlinePlus className="h-6 w-6" aria-hidden="true" />
+                  <AiOutlinePlus className="h-6 w-6 text-white" aria-hidden="true" />
                 </Link>
               </div>
             </div>
