@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <div className='Main grid grid-cols-2 gap-4'>
       <div className="info">
-        <div class="flex px-3 py-3 ml-24 mt-16">
+        <div class="flex px-3 py-3  ml-28 mt-16">
             <div class="max-w-sm rounded overflow-hidden shadow-lg">
                 <img class="w-full" src="https://avatars.mds.yandex.net/i?id=4389e8786c88c834f03d64eb00578b99ed9daed7-9231751-images-thumbs&n=13" alt="Sunset in the mountains"/>
             </div>

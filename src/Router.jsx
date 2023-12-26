@@ -14,8 +14,8 @@ const Router = () => {
     <Navbar />
     <div className=' mt-16  '>
     <Sidebar className="  "/>
-      <div className='ml-72  '>
-      <Routes className='columns-1 block' >
+      <div  style={{marginLeft:"253px"}}>
+      <Routes className='' >
         <Route exact path='/' Component={Main}/>
         <Route exact path='/register' Component={Register}/>
         <Route exact path='/login' Component={Login}/>
