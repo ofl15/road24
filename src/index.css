@@ -25,3 +25,219 @@ progress::-moz-progress-bar {
     height: 7px;
     border-radius: 20px;
 }
+
+.text1{
+    font-size: 40px;
+    padding-top: 7rem;
+    color: #198e7c;
+}
+.box{
+    margin-left: 36%;
+    font-family: sans-serif;
+}
+#input{
+    padding: 15px 60px;
+    border: 3px solid #198e7c    ;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    margin-left: -6%;
+}
+.input1{
+    margin-left: -6%;
+    border: 3px solid #198e7c    ;
+    border-radius: 10px;
+    padding: 15px 5px;
+    text-align: center;
+    font-size: 15px;
+}
+.box1{
+    display: flex;
+    gap: 2%;
+}
+.input2{
+    border: 3px solid #198e7c    ;
+    border-radius: 10px;
+    padding: 15px 43px;
+    text-align: center;
+    font-size: 15px;
+}
+.box2{
+    display: flex;
+    gap: 45%;
+    margin-left: -20%;
+    margin-top: 20%;
+}
+.btn1{
+    background-color: #198e7c;
+    padding: 5px 28px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.btn2{
+    background-color: #198e7c;
+    padding: 5px 25px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Mulish:wght@300;400;500;600;700&display=swap');
+
+.register {
+  font-family: 'Arial', sans-serif;
+}
+
+.r-top {
+  display: flex;
+  background-color: #e1f0fa;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.r-top p {
+  font-family: Kanit;
+  font-style: italic;
+  font-size: 30px;
+  margin-left: 33%;
+  margin-top: 2%;
+  color: black;
+}
+
+.r-top .logo2 {
+  width: 7%;
+}
+
+.r-top .logo3 {
+  width: 8%;
+  margin-left: 40%;
+} 
+.r-parent {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  padding: 20px;
+  margin-top: 50px;
+  width: 90%;
+  gap: 5%;
+}
+
+.r-left P {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.r-left button {
+  margin-left: 40%;
+  margin-top: 17%;
+}
+
+.r-left button svg {
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.r-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+
+.r-title {
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.r-btn {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+button svg {
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.r-left,
+.r-center,
+.r-right {
+  text-align: justify;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.r-right {
+  display: flex;
+  justify-content: space-around;
+}
+
+.r-right .texts h3 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.r-check {
+  color: #00cc00;
+  font-size: 20px;
+}
+
+.r-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  line-height: 35px;
+  margin-top: 5px;
+}
+
+
+.r-item svg {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.test {
+  display: none;
+}
+
+.l-input {
+  display: flex;
+  margin-top: 10px;
+}
+
+.l-input input {
+  width: 95%;
+  border: 1px solid black;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.l-input button {
+  margin-left: 20px;
+}
