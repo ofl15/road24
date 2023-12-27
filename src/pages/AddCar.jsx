@@ -1,5 +1,6 @@
 import React from 'react'
-
+import { texpasport } from '../assets';
+import { Link } from 'react-router-dom';
 
 const AddCar = () => {
   return (
@@ -15,13 +16,17 @@ const AddCar = () => {
           <input className='input1' type="text" placeholder='AAF' />
           <input className='input2' type="number" />
 
-          <div className="texpasport">
-            
-          </div>
+          
         </div>
+        <div className="texpasport">
+            <img className='texpasport' src={texpasport} alt="1" />
+          </div>
         <div className="box2">
-        <button className='btn1'>Yopish</button>
-        <button className='btn2'>Keyingisi</button>
+        <Link to="/"
+        type="button" className='btn1'> Yopish</Link>
+        <Link to="/SelectCar"
+        type="button"
+          className='btn2'>Keyingisi</Link>
         </div>
         </div>
     </div>

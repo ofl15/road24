@@ -26,61 +26,76 @@ progress::-moz-progress-bar {
     border-radius: 20px;
 }
 
+
 .text1{
-    font-size: 40px;
-    padding-top: 7rem;
-    color: #198e7c;
+  font-size: 40px;
+  padding-top: 4rem;
+  color: black;
 }
 .box{
-    margin-left: 36%;
-    font-family: sans-serif;
+  margin-left: 36%;
+  font-family: sans-serif;
 }
 #input{
-    padding: 15px 60px;
-    border: 3px solid #198e7c    ;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 30px;
-    margin-left: -6%;
+  padding: 15px 60px;
+  border: 3px solid black    ;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 30px;
+  margin-left: -6%;
 }
 .input1{
-    margin-left: -6%;
-    border: 3px solid #198e7c    ;
-    border-radius: 10px;
-    padding: 15px 5px;
-    text-align: center;
-    font-size: 15px;
+  margin-left: -6%;
+  border: 3px solid black   ;
+  border-radius: 10px;
+  padding: 15px 5px;
+  text-align: center;
+  font-size: 15px;
 }
 .box1{
-    display: flex;
-    gap: 2%;
+  display: flex;
+  gap: 2%;
 }
 .input2{
-    border: 3px solid #198e7c    ;
-    border-radius: 10px;
-    padding: 15px 43px;
-    text-align: center;
-    font-size: 15px;
+  border: 3px solid black    ;
+  border-radius: 10px;
+  padding: 15px 43px;
+  text-align: center;
+  font-size: 15px;
 }
 .box2{
-    display: flex;
-    gap: 45%;
-    margin-left: -20%;
-    margin-top: 20%;
+  display: flex;
+  gap: 25%;
+  margin-left: -6%;
+  margin-top: 27%;
 }
 .btn1{
-    background-color: #198e7c;
-    padding: 5px 28px;
-    color: #fff;
-    font-size: 20px;
-    border-radius: 5px;
+  background-color: rgb(232, 232, 232);
+  padding: 5px 28px;
+  color: black;
+  font-size: 20px;
+  border-radius: 5px;
 }
 .btn2{
-    background-color: #198e7c;
-    padding: 5px 25px;
-    color: #fff;
-    font-size: 20px;
-    border-radius: 5px;
+  background-color: black;
+  padding: 5px 25px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.texpasport{
+  width: 485px;
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+  margin-left: -35px;
+  animation: mymove 2s infinite ;
+  position: fixed;
+}
+@keyframes mymove {
+  0%   {width: 470px; }
+  50%   {width: 485px ; }
+  100% {width: 470px; }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Mulish:wght@300;400;500;600;700&display=swap');

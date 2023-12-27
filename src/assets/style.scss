@@ -1,0 +1,128 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+
+
+
+
+.back {
+    border-radius: 100px 100px 100px 100px;
+    width: 60px;
+    height: 60px;
+    outline: none;
+    background: #b8b8b8;
+    margin-left: 40px;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.infor {
+    margin-left: 350px;
+
+
+    .info {
+        display: flex;
+        border-radius: 15px;
+        background: transparent;
+        width: 600px;
+        height: 80px;
+        border: 2px solid;
+
+        p {
+            padding-left: 10px;
+            padding-top: 10px;
+            color: black;
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+        .go {
+            padding-left: 360px;
+            font-size: 30px;
+            color: rgb(93, 93, 93);
+            margin-top: 15px;
+        }
+
+    .infomation {
+        border-radius: 50px 50px 50px 50px;
+        background-color: rgb(210, 210, 210);
+        width: 50px;
+        height: 50px;
+        border: none;
+        margin-top: 15px;
+        margin-left: 10px;
+        font-size: 22px;
+    }
+}
+}
+
+    .carname {
+        font-weight: 500;
+        font-size: 22px;
+        margin-top: 10px;
+        margin-left: 550px;
+        
+        span {
+            color: red;
+            font-size: 20px;
+        }
+    }
+
+
+.cars {
+
+    select {
+        width: 600px;
+        height: 80px;
+        margin-left: 350px;
+        border: 2px solid;
+        margin-top: 10px;
+        border-radius: 15px;
+        padding-left: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        color: gray;
+    }
+}
+
+
+.carfoto {
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 520px;
+    margin-top: 10px;
+}
+
+.Back {
+    margin-left: 430px; 
+    border: none;
+    border-radius: 25px;
+    width: 200px;
+    height: 70px;
+    font-size: 25px;
+    font-weight: 500;
+    background-color: rgb(232, 232, 232);
+}
+
+.Next {
+    margin-left: 45%;
+    border: none;
+    border-radius: 25px;
+    width: 220px;
+    height: 70px;
+    font-size: 25px;
+    font-weight: 500;
+    background-color: black;
+    color: #fff;
+    position: absolute;
+    bottom: 150px;
+}
+
+
+.BackNext {
+    margin-top: 10px;
+}
+
+.CHEVOLET {
+    color: black;
+    font-weight: 700;
+    text-align: center  ;
+}
