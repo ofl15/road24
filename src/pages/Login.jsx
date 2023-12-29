@@ -1,10 +1,7 @@
 import React from "react";
-import { HiOutlinePhone } from "react-icons/hi";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { FaRegCheckCircle } from "react-icons/fa";
-// import logo2 from "../assests/logo3.png";
-// import { Link } from "react-router-dom";
 import { logo } from "../assets";
 import { logo3 } from "../assets";
 

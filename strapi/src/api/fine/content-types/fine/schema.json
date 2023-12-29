@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fines",
+  "info": {
+    "singularName": "fine",
+    "pluralName": "fines",
+    "displayName": "Fine",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::car.car",
+      "mappedBy": "fine"
+    },
+    "modda": {
+      "type": "text"
+    },
+    "summa": {
+      "type": "biginteger"
+    }
+  }
+}

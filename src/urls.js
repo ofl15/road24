@@ -1,0 +1,1 @@
+const CARS = 'http://localhost:1337/api/cars?populate=image'

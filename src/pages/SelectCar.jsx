@@ -5,15 +5,13 @@ import { Link } from 'react-router-dom'
 
 const SelectCar = () => {
 
-
-
   return (
     <div><div className='addCar'>
       <div className='columns'>
         <div className='column is-1'>
           <Link to='/addCar'>
             <button className='back'>
-              <i class="bi bi-chevron-left"></i>
+              <i className="bi bi-chevron-left"></i>
             </button>
           </Link>
         </div>
@@ -25,11 +23,11 @@ const SelectCar = () => {
       <div className='infor'>
         <button className='info'>
           <button className='infomation'>
-            <i class="bi bi-info-lg"></i>
+            <i className="bi bi-info-lg"></i>
           </button>
           <p>BILISH MUHIM</p>
           <div className='go'>
-            <i class="bi bi-chevron-right"></i>
+            <i className="bi bi-chevron-right"></i>
           </div>
         </button>
       </div>

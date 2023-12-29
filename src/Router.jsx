@@ -8,6 +8,11 @@ import SelectCar from './pages/SelectCar'
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Yoriqnoma from './pages/Yoriqnoma'
+import Settings from './pages/Settings'
+import Sugurta from './components/Sugurta'
+import modda from './components/modda'
+import Tolovlar from './pages/Tolovlar'
+import Sozlamalar from './pages/Sozlamalar'
 
 const Router = () => {
   return (
@@ -23,6 +28,11 @@ const Router = () => {
         <Route exact path='/addcar' Component={AddCar}/>
         <Route exact path='/selectcar' Component={SelectCar}/>
         <Route exact path='/yoriqnoma' Component={Yoriqnoma}/>
+        <Route exact path='/settings' Component={Settings}/>
+        <Route exact path='/sugurta' Component={Sugurta}/>
+        <Route exact path='/135modda' Component={modda}/>
+        <Route exact path='/tolovlar' Component={Tolovlar}/>
+        <Route exact path='/sozlamalar' Component={Sozlamalar}/>
       </Routes>
       </div>
     </div>
