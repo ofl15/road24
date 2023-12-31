@@ -6,13 +6,13 @@ import { BsFillFuelPumpFill } from "react-icons/bs";
 import { TbShadow } from "react-icons/tb";
 import { Link } from 'react-router-dom';
 
-const Car = ({thumb , car}) => {
+const Car = () => {
   return (
       <div className='Main grid grid-cols-2 gap-4'>
       <div className="info">
         <div className="flex px-3 py-3  ml-28 mt-16">
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                <img className="w-full" style={{width:'400px' , height:''}} src={`http://localhost:1337${thumb}`} alt="Placeholder image" />
+                <img className="w-full" style={{width:'400px' , height:''}} src='https://avatars.mds.yandex.net/i?id=4389e8786c88c834f03d64eb00578b99ed9daed7-9231751-images-thumbs&n=13' alt="Placeholder image" />
             </div>
         </div>
       <div className='inp ml-52  mt-20'>
@@ -63,11 +63,13 @@ const Car = ({thumb , car}) => {
         </div>
         <div className="flex py-3  grid-cols-2 gap-4">
             <div className=" rounded overflow-hidden shadow-lg cursor-pointer" style={{width:'252px'}}>
+              <Link to='/ishonchnoma'>
                 <div className='pl-5 pt-3 pb-3 pr-2'>
                   <ImProfile style={{opacity:'0.6'}} className=' text-2xl' />
                   <h2 className=' text-lg' style={{opacity:'0.7'}}>Ishonchnoma</h2>
                   <h2 className=' text-sm ' style={{opacity:'0.5'}}>Muddati tugashdan oldin eslatmalarni olish uchun ma'lumot qo'shing</h2>
                 </div>
+              </Link>
             </div>
             <div className=" rounded overflow-hidden shadow-lg cursor-pointer" style={{width:'252px'}}>
                 <div className='pl-5 pt-3 pb-3 pr-2'>

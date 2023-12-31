@@ -362,6 +362,58 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiCarCar extends Schema.CollectionType {
+  collectionName: 'cars';
+  info: {
+    singularName: 'car';
+    pluralName: 'cars';
+    displayName: 'Car';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    number: Attribute.String;
+    Tachniche: Attribute.String;
+    Brand: Attribute.String;
+    Model: Attribute.String;
+    image: Attribute.Media;
+    fine: Attribute.Relation<'api::car.car', 'manyToOne', 'api::fine.fine'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::car.car', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::car.car', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFineFine extends Schema.CollectionType {
+  collectionName: 'fines';
+  info: {
+    singularName: 'fine';
+    pluralName: 'fines';
+    displayName: 'Fine';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cars: Attribute.Relation<'api::fine.fine', 'oneToMany', 'api::car.car'>;
+    modda: Attribute.Text;
+    summa: Attribute.BigInteger;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::fine.fine', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::fine.fine', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -768,58 +820,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiCarCar extends Schema.CollectionType {
-  collectionName: 'cars';
-  info: {
-    singularName: 'car';
-    pluralName: 'cars';
-    displayName: 'Car';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    number: Attribute.String;
-    Tachniche: Attribute.String;
-    Brand: Attribute.String;
-    Model: Attribute.String;
-    image: Attribute.Media;
-    fine: Attribute.Relation<'api::car.car', 'manyToOne', 'api::fine.fine'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::car.car', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::car.car', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiFineFine extends Schema.CollectionType {
-  collectionName: 'fines';
-  info: {
-    singularName: 'fine';
-    pluralName: 'fines';
-    displayName: 'Fine';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    cars: Attribute.Relation<'api::fine.fine', 'oneToMany', 'api::car.car'>;
-    modda: Attribute.Text;
-    summa: Attribute.BigInteger;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::fine.fine', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::fine.fine', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -830,6 +830,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::car.car': ApiCarCar;
+      'api::fine.fine': ApiFineFine;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -838,8 +840,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::car.car': ApiCarCar;
-      'api::fine.fine': ApiFineFine;
     }
   }
 }

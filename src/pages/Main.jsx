@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import CARS from '../urls'
 import Cars from '../components/Cars';
@@ -9,12 +9,17 @@ const Main = () => {
 
   
   const load = () => {
-    axios.get(CARS)
-    .then(res => setCars(res.data.data))
-    .catch(err => console.log(err))
-  }
+    axios
+      .get(CARS)
+      .then((res) => setCars(res.data.data))
+      .catch((err) => console.log(err));
+  };
   
-  console.log(CARS,'-------');
+  useEffect(() => {
+    load();
+  }, [setCars]);
+
+  console.log(setCars,'----------');
 
   return (
     <div>

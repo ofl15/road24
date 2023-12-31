@@ -17,7 +17,7 @@ const modda = () => {
     <div className="signs" >
         <h1 className='mt-2 text-3xl'>Sug'urta</h1>
         <div className="flex py-3 gap-4">
-            <div className="rounded overflow-hidden shadow-lg cursor-pointer py-3 px-4" style={{width:'500px'}}>
+            <div className="rounded overflow-hidden shadow-lg cursor-pointer py-6 px-4" style={{width:'500px'}}>
                 <p>Sug'urta deganda yuridik yoki jismoniy shaxslar to'laydigan sug'urta
                     mukofotlaridan shuningdek
                     sug'urtalovchining boshqa mablag'laridan

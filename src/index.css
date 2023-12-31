@@ -401,3 +401,129 @@ button:hover {
 
 
 /* styles for sozlamalar  */
+
+
+.btnishonchnoma{
+  background-color: rgb(177, 175, 175);
+  font-size: 20px;
+  padding: 20px;
+  margin-top: 1%;
+  color: #fff;
+  border-radius: 50%;
+}
+.box11{
+  display: flex;
+  gap: 320px;
+  margin-left: 15%;
+}
+.text1{
+  margin-top: -5%;
+
+}
+.text23{
+  margin-left: 30%;
+  font-size: 20px;
+}
+.inp11{
+  margin-left: 30%;
+  border: 2px solid rgb(63, 63, 63);
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  padding: 10px 17px;
+  
+}
+.boxqw{
+  display: flex;
+  margin-left: 29%;
+  gap: 13%;
+}
+.boxpo{
+  display: flex;
+  margin-left: 29%;
+  gap: 300px;
+}
+.boxqws{
+  display: flex;
+  margin-left: 29%;
+  gap: 31%;
+  font-size: 20px;
+}
+.inp111{
+  
+  border: 2px solid rgb(63, 63, 63);
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  padding: 10px 17px;
+  
+}
+.www{
+  margin-left: 29%;
+  border: 2px solid rgb(63, 63, 63);
+  padding: 15px 235px;
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
+
+}
+.wwwe{
+  padding: 15px 197px;
+  background-color: rgb(230, 230, 230);
+  border: 2px solid rgb(63, 63, 63);
+  margin-left: 29%;
+  border-radius: 10px;
+  text-align: center;
+
+}
+.boxinp{
+  display: flex;
+  margin-left: 200px;
+  margin-right: 500px;
+}
+
+/* ishonchnoma */
+.Manzilar{
+  padding: 10px ;
+}
+.bwdauyu{
+      display: flex;
+      gap:80px ;
+      justify-content: center;
+}
+.boxkl{
+  display: flex;
+  gap: 20px;
+  background-color: #fff;
+  justify-content: center;
+  border-radius: 10px;
+}
+.text232{
+  margin-top: 2%;
+  font-size: 28px;
+}
+.box999{
+  /* display: grid;
+  justify-content: center; */
+  font-size: 20px;
+  border: 3px solid green;
+  background-color: rgb(223, 221, 221);
+  margin-left: 35%;
+  margin-right: 35%;
+  padding: 10px;
+  border-radius: 10px;
+}
+.hamma12{
+}
+.op{
+  text-align: center;
+  font-size: 20px;
+}
+.rt{
+  padding:20px 100px;
+  
+}
+.tr{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+/* manzillar */

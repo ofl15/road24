@@ -13,6 +13,10 @@ import Sugurta from './components/Sugurta'
 import modda from './components/modda'
 import Tolovlar from './pages/Tolovlar'
 import Sozlamalar from './pages/Sozlamalar'
+import Car from './components/Car'
+import Belgilar from './components/Belgilar'
+import Ishonchnoma from './pages/Ishonchnoma'
+import Manzilar from './components/Manzillar'
 
 const Router = () => {
   return (
@@ -22,7 +26,7 @@ const Router = () => {
     <Sidebar className="  "/>
       <div  style={{marginLeft:"183px"}}>
       <Routes className='' >
-        <Route exact path='/' Component={Main}/>
+        <Route exact path='/' Component={Car}/>
         <Route exact path='/register' Component={Register}/>
         <Route exact path='/login' Component={Login}/>
         <Route exact path='/addcar' Component={AddCar}/>
@@ -33,6 +37,9 @@ const Router = () => {
         <Route exact path='/135modda' Component={modda}/>
         <Route exact path='/tolovlar' Component={Tolovlar}/>
         <Route exact path='/sozlamalar' Component={Sozlamalar}/>
+        <Route exact path='/belgilar' Component={Belgilar}/>
+        <Route exact path='/ishonchnoma' Component={Ishonchnoma}/>
+        <Route exact path='/manzillar' Component={Manzilar}/>
       </Routes>
       </div>
     </div>
