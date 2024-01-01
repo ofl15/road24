@@ -1,15 +1,15 @@
 import React from 'react'
 import { BrowserRouter, Routes , Route} from 'react-router-dom'
 import Main from './pages/Main'
-import Register from './pages/Register'
-import Login from './pages/Login'
+import Register from './components/Register'
+import Login from './components/Login'
 import AddCar from './pages/AddCar'
 import SelectCar from './pages/SelectCar'
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Yoriqnoma from './pages/Yoriqnoma'
 import Settings from './pages/Settings'
-import Sugurta from './components/Sugurta'
+import Sugurta from './pages/Sugurta'
 import modda from './components/modda'
 import Tolovlar from './pages/Tolovlar'
 import Sozlamalar from './pages/Sozlamalar'
@@ -17,6 +17,8 @@ import Car from './components/Car'
 import Belgilar from './components/Belgilar'
 import Ishonchnoma from './pages/Ishonchnoma'
 import Manzilar from './components/Manzillar'
+import Tonirovka from './pages/Tonirovka'
+import TexnikKorik from './pages/TexnikKorik'
 
 const Router = () => {
   return (
@@ -40,6 +42,8 @@ const Router = () => {
         <Route exact path='/belgilar' Component={Belgilar}/>
         <Route exact path='/ishonchnoma' Component={Ishonchnoma}/>
         <Route exact path='/manzillar' Component={Manzilar}/>
+        <Route exact path='/tonirovka' Component={Tonirovka}/>
+        <Route exact path='/texkorik' Component={TexnikKorik}/>
       </Routes>
       </div>
     </div>
