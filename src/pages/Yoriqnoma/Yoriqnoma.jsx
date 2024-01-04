@@ -37,8 +37,8 @@ const Yoriqnoma = () => {
             </div>
             <div className="max-w-sm rounded overflow-hidden shadow-lg pr-5 cursor-pointer" style={{width:'252px'}}>
               <Link to='/manzillar'>
-                <div className='pl-7 pt-3 pb-3 pr-2 '>
-                  < MdDirectionsCarFilled style={{opacity:'0.7', marginLeft:'74px'}} className=' mt-8 justify-center items-center flex text-4xl' />
+                <div className='pl-7 pt-3 pb-3 pr-2' >
+                  < MdDirectionsCarFilled style={{opacity:'0.7', marginLeft:'74px', }} className=' mt-8 justify-center items-center flex text-4xl' />
                   <h2 className=' text-xl justify-center items-center flex mt-2' style={{fontWeight:'600'}}> Manzillar (Texnik ko'rik va Texpasport)</h2>
                 </div>
               </Link>
@@ -63,16 +63,20 @@ const Yoriqnoma = () => {
         </div>
         <div className="flex py-3   grid-cols-2 gap-4">
             <div className="max-w-sm rounded overflow-hidden shadow-lg pr-5 cursor-pointer" style={{width:'252px'}}>
+              <Link to='/jihozlash'>
                 <div className='pl-7 pt-3 pb-3 pr-2 '>
                   < PiCarProfileLight style={{opacity:'0.7' , marginLeft:'74px'}} className='mt-8 justify-center items-center flex text-4xl' />
                   <h2 className=' text-xl justify-center items-center flex mt-2' style={{fontWeight:'600'}}>Avtomobilni qayta jihozlash</h2>
                 </div>
+              </Link>
             </div>
             <div className="max-w-sm rounded overflow-hidden shadow-lg pr-5 cursor-pointer" style={{width:'252px'}}>
+              <Link to='/savollar'>
                 <div className='pl-7 pt-3 pb-3 pr-2 '>
                   < CiCircleQuestion style={{opacity:'0.7' , marginLeft:'74px'}} className='mt-8 justify-center items-center flex text-4xl' />
                   <h2 className=' text-xl justify-center items-center flex mt-2' style={{fontWeight:'600'}}>Ko'p so'raladigan savollar</h2>
                 </div>
+              </Link>
             </div>
         </div>
       </div>

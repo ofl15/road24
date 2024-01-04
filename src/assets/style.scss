@@ -130,3 +130,67 @@
     font-weight: 700;
     text-align: center  ;
 }
+
+.qaytajihozlash {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  
+    .q-right {
+      padding: 10px;
+      box-shadow: 0 0 20px rgb(0, 0, 0, 0.4);
+      margin: 0 auto;
+      border-radius: 10px;
+      width: 90%;
+    }
+  
+    .q-right .q-title {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: 22px;
+    }
+  
+    .q-right .q-subtitle {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+  
+    .q-right .q-description {
+      margin-left: auto;
+      margin-top: 20px;
+      line-height: 52px;
+      overflow: scroll;
+      height: 68vh;
+      width: 95%;
+    }
+
+  }
+  
+  .questions {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  
+    .left {
+      padding: 10px;
+      box-shadow: 0 0 20px rgb(0, 0, 0, 0.4);
+      margin: 0 auto;
+      border-radius: 10px;
+      width: 90%;
+      margin: auto;
+      text-align: center;
+      height: 100vh;
+      overflow: scroll;
+    }
+  
+    .right {
+      padding: 10px;
+      margin: 0 auto;
+      border-radius: 10px;
+      width: 90%;
+      text-align: center;
+    }
+  }

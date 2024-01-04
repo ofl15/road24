@@ -27,7 +27,7 @@ const Belgilar = () => {
     <h1 className='mt-2 text-3xl'>Belgilar, chiziqlar va qoidalar</h1>
         <div className="flex py-1  mt-6 rounded overflow-hidden shadow-lg cursor-pointer" style={{width:'500px'}}>
             <div className='flex px-4 py-3'>
-                <BsFileText className=' text-2xlmr-2'  />
+                <BsFileText className=' text-2xl mr-2'  />
                 <h1 className='' style={{fontWeight:'600'}}>Yo'l harakati qoidalari</h1>
                 <MdOutlineKeyboardArrowRight className='text-2xl ml-64'/>
             </div>

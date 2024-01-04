@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 export default function Example() {
   return (
-    <div className='' >
+    <div className=' z-50' >
     <Disclosure as="nav" style={{backgroundColor: '#198e7c' , position: 'fixed', top: 0, left: 0, right: 0 }}>
       {({ open }) => (
         <>

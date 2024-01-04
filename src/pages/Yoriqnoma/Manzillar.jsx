@@ -11,16 +11,16 @@ function Manzilar() {
     <div className="Manzilar">
         <div className="hamma12">
     <div className="bwdauyu">
-        <Link className='btnishonchnoma' to="/" type='button'><IoIosArrowBack/></Link>
+        <Link className='btnishonchnoma' to="/yoriqnoma" type='button'><IoIosArrowBack/></Link>
         <p className='text232'>Manzilar(Texnik ko'rik va  Texpasport)</p>
     </div>
     <br />
     <div className="box999">
         <h1>Texnik ko'rikdan o'tkazish shaxobchangizni <br /> ilovaga qo'shish uchun:</h1>
         <div className="boxkl">
-        <MdErrorOutline />
+        <MdErrorOutline className='mt-1 text-2xl' />
         <p>Ma'lumotlarni to'ldiring</p>
-        <FaChevronRight />
+        <FaChevronRight className='mt-2'/>
 
         </div>
     </div>
