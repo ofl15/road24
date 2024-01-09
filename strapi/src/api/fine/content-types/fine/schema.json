@@ -23,6 +23,12 @@
     },
     "summa": {
       "type": "biginteger"
+    },
+    "address": {
+      "type": "string"
+    },
+    "Tavsif": {
+      "type": "string"
     }
   }
 }

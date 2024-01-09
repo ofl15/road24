@@ -404,6 +404,8 @@ export interface ApiFineFine extends Schema.CollectionType {
     cars: Attribute.Relation<'api::fine.fine', 'oneToMany', 'api::car.car'>;
     modda: Attribute.Text;
     summa: Attribute.BigInteger;
+    address: Attribute.String;
+    Tavsif: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

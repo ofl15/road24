@@ -21,6 +21,10 @@ import Tonirovka from './pages/Tonirovka'
 import TexnikKorik from './pages/TexnikKorik'
 import QaytaJihozlash from './pages/Yoriqnoma/QaytaJihozlash'
 import Questions from './pages/Yoriqnoma/Questions'
+import Main from './pages/Main'
+import Infors from './components/Infors'
+import Jarimalar from './pages/Jarimalar'
+import Admin from './pages/Admin'
 
 const Router = () => {
   return (
@@ -30,11 +34,11 @@ const Router = () => {
     <Sidebar className="  "/>
       <div  style={{marginLeft:"183px"}}>
       <Routes className='' >
-        <Route exact path='/' Component={Car}/>
+        <Route exact path='/' Component={Main}/>
         <Route exact path='/register' Component={Register}/>
         <Route exact path='/login' Component={Login}/>
         <Route exact path='/addcar' Component={AddCar}/>
-        <Route exact path='/selectcar' Component={SelectCar}/>
+        <Route exact path='/selectcar/:carnumber/:tectnumber/' Component={SelectCar}/>
         <Route exact path='/yoriqnoma' Component={Yoriqnoma}/>
         <Route exact path='/settings' Component={Settings}/>
         <Route exact path='/sugurta' Component={Sugurta}/>
@@ -48,6 +52,9 @@ const Router = () => {
         <Route exact path='/texkorik' Component={TexnikKorik}/>
         <Route exact path='/jihozlash' Component={QaytaJihozlash}/>
         <Route exact path='/savollar' Component={Questions}/>
+        <Route exact path='/infor' Component={Infors}/>
+        <Route exact path='/jarimalar' Component={Jarimalar}/>
+        <Route exact path='/admin150505' Component={Admin}/>
       </Routes>
       </div>
     </div>

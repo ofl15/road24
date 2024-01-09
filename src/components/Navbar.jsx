@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export default function Example() {
   return (
     <div className=' z-50' >
-    <Disclosure as="nav" style={{backgroundColor: '#198e7c' , position: 'fixed', top: 0, left: 0, right: 0 }}>
+    <Disclosure as="nav" className='z-40' style={{backgroundColor: '#198e7c' , position: 'fixed', top: 0, left: 0, right: 0 }}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

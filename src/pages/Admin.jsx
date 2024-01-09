@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "../assets/style.scss";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { CARS } from "../urls";
+import { FINE } from "../urls";
 import axios from "axios";
 import { BiImageAdd } from "react-icons/bi";
 import { IoIosArrowBack } from "react-icons/io";
@@ -14,52 +14,60 @@ const SelectCar = () => {
   const { carnumber, tectnumber } = useParams();
   const [mark , setMark] = useState('')
   const [model , setModel] = useState('')
-  const [img, setImg] = useState(null)
-  const [file, setFile] = useState()
 
   const navigate = useNavigate()
   
   
   const createCar = () => {
-    const datas = new FormData();
-    datas.append('image', img);
-    datas.append('number', carnumber);
-    datas.append('Tachniche', tectnumber);
-    datas.append('Brand', mark);
-    datas.append('Model', model);
 
-    console.log(datas, "======================================");
+    
     axios
-    .post("http://localhost:1337/api/cars?populate=image/upload", datas)
-      .then((res) => console.log(res.data, "----------------------------------") , navigate('/'))
+    .post(FINE, {
+      data: {
+        number: carnumber,
+        Tachniche: tectnumber,
+        Brand: mark ,
+        Model:model ,
+        },
+      })
+      .then((res) => console.log(res.data) , navigate('/'))
       .catch((err) => console.log(err));
   };
 
+
+
+
+
+
+
+
+
   // file
-  const inputRef = useRef(null);
-  const handleClick = () => {
+  // const inputRef = useRef(null);
 
-    inputRef.current.click();
-  };
+  // const handleClick = () => {
 
-  const handleFileChange = event => {
-    const fileObj = event.target.files && event.target.files[0];
-    if (!fileObj) {
-      return;
-    }
+  //   inputRef.current.click();
+  // };
+
+//   const handleFileChange = event => {
+//     const fileObj = event.target.files && event.target.files[0];
+//     if (!fileObj) {
+//       return;
+//     }
   
-    setFile(URL.createObjectURL(event.target.files[0]));
-    setImg(fileObj);
-    
-    event.target.value = null;
-  };
+//     setFile(URL.createObjectURL(event.target.files[0]));
+//     setImg(fileObj);
+  
+//     event.target.value = null;
+//   };
   
   //file
 
   const filling = e => {
     e.preventDefault()
 
-    if (mark && model && img) {
+    if (mark && model) {
       createCar()
     } else(
       toast.error("Bosh joylarni to'ldiring!")
@@ -93,14 +101,10 @@ const SelectCar = () => {
             </div>
           </button>
         </div>
-        {/* -> </LINK> <- тут будет линк "BILISH MIHIM"  */}
-        {/* --------------------------------------------------------------------------------------------------------- */}
+
         <p className='carname'>
-          Avtomobil markasi <span>*</span>
+          Modda <span>*</span>
         </p>
-        {/* --------------------------------------------------------------------------------------------------------- */}
-
-
 
 
         <div className='ModelsCars'>
@@ -108,18 +112,29 @@ const SelectCar = () => {
             <input className="input2 "  type="text" style={{marginLeft:'500px' , width:'600px' , fontSize:'24px' , padding:'3px 0'}} onChange={(e)=>setMark(e.target.value)}  value={mark}/>
           </div>
 
-
-
-
           <p className='carname'>
-            Avtomobil modeli <span>*</span>
+            Qoidabuzarlik Tavsifi <span>*</span>
           </p>
           <div className='cars'>
             <input className="input2 "  type="text" style={{marginLeft:'500px' , width:'600px' , fontSize:'24px' , padding:'3px 0'}} onChange={(e)=>setModel(e.target.value)}  value={model}/>
           </div>
+
+          <p className='carname'>
+            Address <span>*</span>
+          </p>
+          <div className='cars'>
+            <input className="input2 "  type="text" style={{marginLeft:'500px' , width:'600px' , fontSize:'24px' , padding:'3px 0'}} />
+          </div>
+
+          <p className='carname'>
+            Summa <span>*</span>
+          </p>
+          <div className='cars'>
+            <input className="input2 "  type="number" style={{marginLeft:'500px' , width:'600px' , fontSize:'24px' , padding:'3px 0'}}/>
+          </div>
         </div>
 
-        <p className='carfoto'>Mashinani rsmini qoshish</p>
+        {/* <p className='carfoto'>Mashinani rsmini qoshish</p>
         <div className='carfotos'>
           {file ? (
             <div className="add_image ">
@@ -140,7 +155,7 @@ const SelectCar = () => {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
 
 
 
