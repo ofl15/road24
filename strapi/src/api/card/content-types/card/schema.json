@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "singularName": "card",
+    "pluralName": "cards",
+    "displayName": "Card",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "money": {
+      "type": "biginteger"
+    },
+    "num": {
+      "type": "string"
+    }
+  }
+}

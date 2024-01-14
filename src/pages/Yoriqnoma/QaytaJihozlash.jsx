@@ -1,12 +1,5 @@
 import React from "react";
 import '../../assets/style.scss'
-import { TiCancel } from "react-icons/ti";
-import { MdDirectionsCarFilled } from "react-icons/md";
-import { BsFileText } from "react-icons/bs";
-import { FaCarSide } from "react-icons/fa6";
-import { PiCarProfileLight } from "react-icons/pi";
-import { CiCircleQuestion } from "react-icons/ci";
-import { Link,  } from 'react-router-dom';
 import Infors from "../../components/Infors";
 
 

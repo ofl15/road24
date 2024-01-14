@@ -1,2 +1,5 @@
 export const CARS = 'http://localhost:1337/api/cars?populate=image'
-export const FINE = 'http://localhost:1337/api/fines?populate=cars'
+export const CAR = 'http://localhost:1337/api/cars/upload'
+export const FINE = 'http://localhost:1337/api/fines?populate=car&populate=car.image'
+export const CARD = 'http://localhost:1337/api/cards'
+export const FINE_DETAIL = 'http://localhost:1337/api/fines/id?populate=car&populate=car.image'

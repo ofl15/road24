@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "cars": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::car.car",
-      "mappedBy": "fine"
-    },
     "modda": {
       "type": "text"
     },
@@ -28,6 +22,18 @@
       "type": "string"
     },
     "Tavsif": {
+      "type": "string"
+    },
+    "car": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::car.car",
+      "inversedBy": "fines"
+    },
+    "is_payment": {
+      "type": "boolean"
+    },
+    "plate": {
       "type": "string"
     }
   }

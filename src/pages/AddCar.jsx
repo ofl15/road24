@@ -54,13 +54,13 @@ const AddCar = () => {
             <img className="texpasport" src={texpasport} alt="1" />
           </div>
           <div className="box2 ">
-            <Link to="/" type="button" className="btn1">
+            <Link to="/" type="button" className="custom-btn btn-2" style={{background:'rgb(6,14,131)' , background:'linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%)'}}>
               {" "}
               Yopish
             </Link>
             <ToastContainer />
-            <button onClick={filling} type="button" className="btn2">
-              Keyingisi
+            <button onClick={filling} type="button" className="btn-12 custom-btn-1 text-black -ml-9">
+            <span>Click!</span><span>Keyingisi</span>
             </button>
           </div>
         </form>

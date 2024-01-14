@@ -8,7 +8,6 @@ import SelectCar from './pages/SelectCar'
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Yoriqnoma from './pages/Yoriqnoma/Yoriqnoma'
-import Settings from './pages/Settings'
 import Sugurta from './pages/Sugurta'
 import modda from './components/modda'
 import Tolovlar from './pages/Tolovlar'
@@ -25,13 +24,16 @@ import Main from './pages/Main'
 import Infors from './components/Infors'
 import Jarimalar from './pages/Jarimalar'
 import Admin from './pages/Admin'
+import Card from './pages/Card'
+import AddImage from './components/AddImage'
+import FineDetail from './pages/FineDetail'
 
 const Router = () => {
   return (
     <BrowserRouter >
     <Navbar />
-    <div className=' mt-16  '>
-    <Sidebar className="  "/>
+    <div className=' mt-16 '>
+    <Sidebar className=" -z-40  "/>
       <div  style={{marginLeft:"183px"}}>
       <Routes className='' >
         <Route exact path='/' Component={Main}/>
@@ -40,7 +42,6 @@ const Router = () => {
         <Route exact path='/addcar' Component={AddCar}/>
         <Route exact path='/selectcar/:carnumber/:tectnumber/' Component={SelectCar}/>
         <Route exact path='/yoriqnoma' Component={Yoriqnoma}/>
-        <Route exact path='/settings' Component={Settings}/>
         <Route exact path='/sugurta' Component={Sugurta}/>
         <Route exact path='/135modda' Component={modda}/>
         <Route exact path='/tolovlar' Component={Tolovlar}/>
@@ -55,6 +56,9 @@ const Router = () => {
         <Route exact path='/infor' Component={Infors}/>
         <Route exact path='/jarimalar' Component={Jarimalar}/>
         <Route exact path='/admin150505' Component={Admin}/>
+        <Route exact path='/card' Component={Card}/>
+        <Route exact path='/add-image' Component={AddImage}/>
+        <Route exact path="/fine/:id" Component={FineDetail}/>
       </Routes>
       </div>
     </div>
