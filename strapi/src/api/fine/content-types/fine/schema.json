@@ -33,7 +33,13 @@
     "is_payment": {
       "type": "boolean"
     },
-    "plate": {
+    "date": {
+      "type": "string"
+    },
+    "releaseDate": {
+      "type": "string"
+    },
+    "idnum": {
       "type": "string"
     }
   }

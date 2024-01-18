@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "../assets/style.scss";
-import { IoIosArrowForward } from "react-icons/io";
-import { GiInfo } from "react-icons/gi";
-import { BiSolidFilePdf } from "react-icons/bi";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { IoIosInformationCircleOutline } from "react-icons/io";
 import axios from "axios";
 import { FINE } from '../urls'
 import Fines from "../components/Fines";
 import Infors from "../components/Infors";
+import FalseFines from '../components/FalseFines'
 
 
 export default function Jarimalar() {
 
   const [fines, setFines] = useState([]);
   
-  const [randomNumber, setRandomNumber] = useState(11);
+  const falseFines = fines.filter(fine => fine.attributes.is_payment === false);
+  const trueFines = fines.filter(fine => fine.attributes.is_payment === true);
+
   const load = () => {
     axios
       .get(FINE)
@@ -36,10 +35,6 @@ export default function Jarimalar() {
     setTabIndex(index);
   };
 
-  useEffect(() => {
-    const newRandomNumber = Math.floor(Math.random() * 100) + 1;
-    setRandomNumber(newRandomNumber);
-  }, []); 
   
 
   return (
@@ -51,27 +46,25 @@ export default function Jarimalar() {
           <div className="jarimalar-tabs">
             <Link to={"/"}>
               <div className="tab-btn">
-                <button className="btn">
-                  <IoIosArrowBack /> 
+                <button className="btn px-2 py-2 rounded-full">
+                  <IoIosArrowBack  className=" text-2xl"/> 
                 </button>
               </div>
             </Link>
             <div className="tabs">
               <TabList>
-                <Tab>To'langan jarimalar ({fines.length})</Tab>
-                <Tab>To'lanmagan jarimalar ({fines.length})</Tab>
+                <Tab>To'lanmagan jarimalar ({falseFines.length})</Tab>
+                <Tab>To'langan jarimalar ({trueFines.length})</Tab>
               </TabList>
             </div>
           </div>
 
           <TabPanel>
-           <Fines fines={fines} />
+           <FalseFines fines={fines} />
           </TabPanel>
 
           <TabPanel>
-           
            <Fines fines={fines} />
-          
           </TabPanel>
         </Tabs>
       </div>

@@ -31,7 +31,7 @@ const Infors = () => {
             <Slide index={car}>
               <div className='borderr flex px-3 py-3  ml-28 mt-16'>
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                  <img className="w-full" src={`http://localhost:1337${car.attributes.image.data.attributes.formats.thumbnail.url}`} alt="" />
+                  <img className="w-full" src={`http://localhost:1337${car.attributes.image.data.attributes.formats.large.url}`} alt="" />
                 </div>
               </div>
               <div className='inp ml-52  mt-20'>

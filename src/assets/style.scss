@@ -268,9 +268,11 @@ width: 90%;
       .end {
         .end-f {
           display: flex;
-          gap: 50px;
+          // gap: 20px;
           margin-top: 49px;
           margin-bottom: 60px;
+          justify-content: center;
+          align-items: center;
         }
         .end-btn {
           width: 45%;
@@ -278,6 +280,11 @@ width: 90%;
           justify-content: space-around;
           color: black;
           background-color: #bbbbbb;
+          span{
+            color: #000;
+            font-size: 16px;
+            margin-top: 4px;
+          }
         }
         svg {
           background-color: #e2e2e2;
@@ -391,12 +398,13 @@ width: 90%;
       margin-bottom: 20px;
       width: 90%;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      width: 600px;
   
       .parent {
         display: grid;
         grid-template-columns: 33% 33% 33%;
         // gap: auto; 
-        display: flex;
+        // display: flex;
         
         .child2 {
           display: flex;
@@ -448,6 +456,7 @@ width: 90%;
         align-items: center;
         font-size: 14px;
         margin-top: 10px;
+        margin-bottom: -20px;
         
         p {
           font-size: 15px;

@@ -840,7 +840,9 @@ export interface ApiFineFine extends Schema.CollectionType {
     Tavsif: Attribute.String;
     car: Attribute.Relation<'api::fine.fine', 'manyToOne', 'api::car.car'>;
     is_payment: Attribute.Boolean;
-    plate: Attribute.String;
+    date: Attribute.String;
+    releaseDate: Attribute.String;
+    idnum: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

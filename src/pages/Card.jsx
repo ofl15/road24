@@ -25,6 +25,7 @@ const Card = () => {
               Name: holder ,
               date: date,
               num: number,
+              money: 8467450
             },
           })
           .then((res) => {
@@ -148,7 +149,7 @@ const Card = () => {
                     <div class="w-full h-12 bg-gray-200 absolute top-10">&nbsp;</div>
                 </div>
 
-                <div
+                    <div
                     class="recto z-2 absolute overflow-hidden w-96 h-56 rounded-2xl px-8 py-6 bg-black text-white shadow-xl flex flex-col justify-end gap-6">
                     <div class="logo absolute top-6 right-8 w-16 h-8 flex justify-items-center items-center">
                       {card.attributes.num.slice(0,4) === '9860' ? (

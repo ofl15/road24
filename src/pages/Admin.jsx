@@ -19,8 +19,24 @@ const SelectCar = () => {
   
   const navigate = useNavigate()
   
-  const [cars, setCars] = useState([]);
+  
+  const [id, setId] = useState([]);
 
+
+
+  let date=new Date();
+  let day = date.getDate();
+  let month = date.getMonth();
+  let year = date.getFullYear();
+  let release = day - 2 + '.' + month + 1 + '.' + year
+  let datee = day + '.' + month + 1 + '.' + year
+
+  
+  let x = Math.random() * 10000000000000;
+  let y = Math.round(x);
+  let random = "RA" + y
+
+  
   const createCar = () => {
     axios
       .post(FINE, {
@@ -29,7 +45,13 @@ const SelectCar = () => {
           address: address,
           Tavsif: tavsif,
           summa: summa,
-          plate: number,
+          is_payment: false ,
+          date: datee ,
+          releaseDate: release,
+          idnum: random,
+          car:{
+            set: [number]
+          }
         },
       })
       .then((res) => {
@@ -51,17 +73,18 @@ const SelectCar = () => {
   }
 
 
-console.log(number);
 
-  const load = () => {
+
+
+  const loading = () => {
     axios
       .get(CARS)
-      .then((res) => setCars(res.data.data))
+      .then((res) => setId(res.data.data))
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    load();
+    loading();
   }, []);
 
   return (
@@ -125,31 +148,6 @@ console.log(number);
         </div>
 
 
-        {/* <div class="relative inline-block text-left ml-96">
-          <div class="group">
-              <button type="button"
-                  class="inline-flex justify-center items-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
-                  Open Menu
-                  <svg class="w-4 h-4 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
-                  </svg>
-              </button>
-              <div
-                  class="absolute left-0 w-40 mt-1 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
-                  <div class="py-1">
-                    {cars &&
-                            cars.map((category) => (
-                              <a
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                key={category.id}
-                              >
-                                {category.attributes.number}
-                              </a>
-                            ))}
-                  </div>
-              </div>
-          </div>
-      </div> */}
 
               <select
                 class=" w-sm flex justify-center items-center text-sm mt-7 font-medium transition duration-75 border border-gray-800 rounded-lg ml-96 shadow-sm h-9 focus:border-blue-600 focus:ring-1 focus:ring-inset focus:ring-blue-600 bg-none"
@@ -157,10 +155,10 @@ console.log(number);
                 value={number} 
                 style={{marginLeft:'500px',  width:'600px' , height:'40px' , fontSize:'25px', border:'solid 3px #000'}}
               >
-                {cars &&
-                  cars.map((category) => (
+                {id &&
+                  id.map((category) => (
                     <option
-                      value={category.attributes.number}
+                      value={category.id}
                       className="block px-4 text-sm text-gray-700 hover:bg-gray-100"
                       key={category.id}
                     >
@@ -174,16 +172,12 @@ console.log(number);
         <div className='BackNext'>
           <div className='columns'>
             <div className='column is-1'>
-              <Link to="/">
-                <button className='Back'>
-                  Yopish
-                </button>
-              </Link>
+              <Link to='/' type='button' className="custom-btn-1 btn-311 buttonnn-1112"><span>Yopish</span></Link>
             </div>
             <ToastContainer />
             <div className='column'>
-              <button  className='Next' onClick={filling}>
-                Qo'shish
+              <button className=" custom-btn-1 btn-3 buttonnn-1113 text-white " onClick={filling}>
+              <span>Qo'shish</span>
               </button>
             </div>
           </div>
