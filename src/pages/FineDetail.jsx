@@ -10,6 +10,9 @@ import Modal from "../components/Modal";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { jsPDF } from "jspdf";
+
+
 
 export default function FineDetail() {
   const [card, setCard] = useState('');
@@ -19,6 +22,48 @@ export default function FineDetail() {
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false);
 
+
+
+ const generatePDF = () => {
+  const pdf = new jsPDF();
+
+  // Set font size and style
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(16);
+
+  // Tepada joylashgan matn
+  pdf.text("ROAD 24", 80, 10);
+
+  // Set font size and style for regular text
+  pdf.setFontSize(12);
+  pdf.setFont("helvetica", "normal");
+
+  // PDF-ga kerakli ma'lumotlarni qo'shing with styles
+  pdf.text(`Jarima raqami:${random} - raqamli jarima solish to'g'risidagi qaror`, 20, 30);
+  pdf.text(`${date} kuni BUXORO VILOYATI BUXORO SHAHAR ${address} da ro'yxatda turovchi XUDOYBERDI BAHODIR SHONAZAROVICH (08.08.1982) fuqaro`, 20, 40);
+  pdf.text(`Men, BUXORO VILOYATI YHXX GAI inspektori QURBONOV SHAVKAT QO'LDOSH OG'LI
+maxsus avtomatlashtirilgan foto va video moslamalari orqali qayd etilgan yo'l harakati qoidalarini buzulishi
+tafsilotlarini ko'rib chiqib, qoyidagilarni ANIQLADIM:`, 20, 60);
+
+  pdf.setTextColor('blue')
+  pdf.setFont("helvetica", "bold");
+
+  pdf.text(`${model}`, 20, 90);
+  pdf.text(`${number}`, 20, 100);
+
+  pdf.setFontSize(12);
+  pdf.setFont("helvetica", "normal");
+  pdf.setTextColor('black')
+
+  pdf.text(`Qoidabuzarlik joyi: ${address}`, 20, 70);
+  pdf.addImage(`${thumb}`, 'JPEG', 15, 70, 180, 100);
+
+  setTimeout(() => {
+    pdf.save("jarima.pdf");
+  }, 1000);
+};
+
+  
   const handlePayment = () => {
     setIsLoading(true);
   
@@ -78,6 +123,7 @@ export default function FineDetail() {
   const date = fine ?  fine.attributes.releaseDate : ''
   const number = fine ?  fine.attributes.car.data.attributes.number : ''
   const thumb = fine ?  fine.attributes.car.data.attributes.image.data.attributes.formats.large.url : ''
+  const model = fine ?  fine.attributes.car.data.attributes.model : ''
   const random = fine ?  fine.attributes.idnum : ''
   const boolean = fine ?  fine.attributes.is_payment : ''
   
@@ -223,7 +269,7 @@ export default function FineDetail() {
             ) : ''}
 
             <ToastContainer />
-            <button className="end-btn">
+            <button onClick={generatePDF} className="end-btn">
               {" "}
               <BiSolidFilePdf /> <span>Qarorni yuklab olish PDF</span>
                <IoIosArrowForward />

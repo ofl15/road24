@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.12.1",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^1.7.17",
@@ -15,7 +16,9 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.3",
     "bootstrap": "^5.3.2",
+    "emailjs-com": "^3.2.0",
     "imask": "^7.3.0",
+    "jspdf": "^2.5.1",
     "mui": "^0.0.1",
     "primereact": "^10.3.1",
     "pure-react-carousel": "^1.30.1",

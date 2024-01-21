@@ -3,10 +3,17 @@ import { Disclosure } from '@headlessui/react'
 import { FaBarsStaggered, FaXmark  } from "react-icons/fa6";
 import { AiOutlinePlus } from "react-icons/ai";
 import { road } from '../assets';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaCreditCard } from "react-icons/fa";
 
 export default function Example() {
+    // const navigate = useNavigate()
+    // const isAuthenticated = localStorage.getItem("user") && localStorage.getItem("token")
+
+
+    // if (!isAuthenticated) {
+    //   return navigate('/login')
+    // }
   return (
     <div className=' z-50' >
     <Disclosure as="nav" className='z-40' style={{backgroundColor: '#198e7c' , position: 'fixed', top: 0, left: 0, right: 0 }}>

@@ -362,6 +362,128 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiCarCar extends Schema.CollectionType {
+  collectionName: 'cars';
+  info: {
+    singularName: 'car';
+    pluralName: 'cars';
+    displayName: 'Car';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    number: Attribute.String;
+    Tachniche: Attribute.String;
+    Brand: Attribute.String;
+    Model: Attribute.String;
+    image: Attribute.Media;
+    fines: Attribute.Relation<'api::car.car', 'oneToMany', 'api::fine.fine'>;
+    users_permissions_user: Attribute.Relation<
+      'api::car.car',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::car.car', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::car.car', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCardCard extends Schema.CollectionType {
+  collectionName: 'cards';
+  info: {
+    singularName: 'card';
+    pluralName: 'cards';
+    displayName: 'Card';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    date: Attribute.String;
+    money: Attribute.BigInteger;
+    num: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::card.card', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::card.card', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFineFine extends Schema.CollectionType {
+  collectionName: 'fines';
+  info: {
+    singularName: 'fine';
+    pluralName: 'fines';
+    displayName: 'Fine';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    modda: Attribute.Text;
+    summa: Attribute.BigInteger;
+    address: Attribute.String;
+    Tavsif: Attribute.String;
+    car: Attribute.Relation<'api::fine.fine', 'manyToOne', 'api::car.car'>;
+    is_payment: Attribute.Boolean;
+    date: Attribute.String;
+    releaseDate: Attribute.String;
+    idnum: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::fine.fine', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::fine.fine', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiVerificationVerification extends Schema.CollectionType {
+  collectionName: 'verifications';
+  info: {
+    singularName: 'verification';
+    pluralName: 'verifications';
+    displayName: 'verification';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email;
+    passcode: Attribute.BigInteger;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::verification.verification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::verification.verification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -707,6 +829,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    cars: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::car.car'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -768,91 +895,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiCarCar extends Schema.CollectionType {
-  collectionName: 'cars';
-  info: {
-    singularName: 'car';
-    pluralName: 'cars';
-    displayName: 'Car';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    number: Attribute.String;
-    Tachniche: Attribute.String;
-    Brand: Attribute.String;
-    Model: Attribute.String;
-    image: Attribute.Media;
-    fines: Attribute.Relation<'api::car.car', 'oneToMany', 'api::fine.fine'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::car.car', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::car.car', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCardCard extends Schema.CollectionType {
-  collectionName: 'cards';
-  info: {
-    singularName: 'card';
-    pluralName: 'cards';
-    displayName: 'Card';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String;
-    date: Attribute.String;
-    money: Attribute.BigInteger;
-    num: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::card.card', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::card.card', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiFineFine extends Schema.CollectionType {
-  collectionName: 'fines';
-  info: {
-    singularName: 'fine';
-    pluralName: 'fines';
-    displayName: 'Fine';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    modda: Attribute.Text;
-    summa: Attribute.BigInteger;
-    address: Attribute.String;
-    Tavsif: Attribute.String;
-    car: Attribute.Relation<'api::fine.fine', 'manyToOne', 'api::car.car'>;
-    is_payment: Attribute.Boolean;
-    date: Attribute.String;
-    releaseDate: Attribute.String;
-    idnum: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::fine.fine', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::fine.fine', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -863,6 +905,10 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::car.car': ApiCarCar;
+      'api::card.card': ApiCardCard;
+      'api::fine.fine': ApiFineFine;
+      'api::verification.verification': ApiVerificationVerification;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -871,9 +917,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::car.car': ApiCarCar;
-      'api::card.card': ApiCardCard;
-      'api::fine.fine': ApiFineFine;
     }
   }
 }

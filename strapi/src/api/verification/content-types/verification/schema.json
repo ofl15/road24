@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "verifications",
+  "info": {
+    "singularName": "verification",
+    "pluralName": "verifications",
+    "displayName": "verification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "passcode": {
+      "type": "biginteger"
+    }
+  }
+}

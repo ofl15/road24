@@ -1,9 +1,10 @@
 import React from 'react'
 import emoji from '../assets/emoji.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Infors from '../components/Infors'
 
 export default function Tolovlar() {
+
   return (
    <div className="tolovlar">
     <Infors />

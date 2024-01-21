@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter, Routes , Route} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter, Routes , Route, useNavigate} from 'react-router-dom'
 // import Main from './pages/Main'
 import Register from './components/Register'
 import Login from './components/Login'
@@ -27,8 +27,17 @@ import Admin from './pages/Admin'
 import Card from './pages/Card'
 import AddImage from './components/AddImage'
 import FineDetail from './pages/FineDetail'
+import Contact from './components/Contact'
+import { Navigate } from 'react-router-dom'
 
 const Router = () => {
+
+  const [carr, setCarr] = useState(JSON.parse(localStorage.getItem('carr')) || [])
+  useEffect(() => {
+      localStorage.setItem('carr', JSON.stringify(carr))
+  }, [carr])
+
+
   return (
     <BrowserRouter >
     <Navbar />
@@ -40,7 +49,7 @@ const Router = () => {
         <Route exact path='/register' Component={Register}/>
         <Route exact path='/login' Component={Login}/>
         <Route exact path='/addcar' Component={AddCar}/>
-        <Route exact path='/selectcar/:carnumber/:tectnumber/' Component={SelectCar}/>
+        <Route exact path='/selectcar/:carnumber/:tectnumber/' element={<SelectCar carr={carr} setCarr={setCarr}/>}/>
         <Route exact path='/yoriqnoma' Component={Yoriqnoma}/>
         <Route exact path='/sugurta' Component={Sugurta}/>
         <Route exact path='/135modda' Component={modda}/>
@@ -59,6 +68,7 @@ const Router = () => {
         <Route exact path='/card' Component={Card}/>
         <Route exact path='/add-image' Component={AddImage}/>
         <Route exact path="/fine/:id" Component={FineDetail}/>
+        <Route exact path="/contact" Component={Contact}/>
       </Routes>
       </div>
     </div>

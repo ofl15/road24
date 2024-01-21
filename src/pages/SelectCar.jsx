@@ -10,14 +10,18 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SelectCar = () => {
-  const { carnumber, tectnumber } = useParams();                                                                                                                      
+  const { carnumber, tectnumber } = useParams();
   const [mark, setMark] = useState("");
   const [model, setModel] = useState("");
   const [file, setFile] = useState();
 
   const navigate = useNavigate();
   const [files, setFiles] = useState();
-  
+
+  const [username] = useState(JSON.parse(localStorage.getItem("user")) || []);
+
+  const id = username.id;
+
   const uploadImage = async (e) => {
     // e.preventDefault();
     const formData = new FormData();
@@ -25,24 +29,30 @@ const SelectCar = () => {
     axios.post("http://localhost:1337/api/upload", formData).then((res) => {
       const imageId = res.data[0];
       axios
-        .post("http://localhost:1337/api/cars", {
-              data: { image: imageId ,
-                  number: carnumber ,
-                  Tachniche: tectnumber ,
-                  Brand: mark ,
-                  Model: model
+        .post(
+          "http://localhost:1337/api/cars?populate=users_permissions_user",
+          {
+            data: {
+              image: imageId,
+              number: carnumber,
+              Tachniche: tectnumber,
+              Brand: mark,
+              Model: model,
+              users_permissions_user: {
+                set: [id],
               },
-        })
+            },
+          }
+        )
         .then((res) => {
           console.log(res.data.data, "---------------------------");
-          navigate("/")
+          navigate("/");
         });
     });
   };
 
   // file
   const inputRef = useRef(null);
-  
 
   const handleClick = () => {
     inputRef.current.click();
@@ -54,15 +64,12 @@ const SelectCar = () => {
       return;
     }
 
-    setFile(URL.createObjectURL(event.target.files[0])); 
-
+    setFile(URL.createObjectURL(event.target.files[0]));
 
     // event.target.value = null;
   };
 
   //file
-
-
 
   const filling = (e) => {
     e.preventDefault();
@@ -74,7 +81,7 @@ const SelectCar = () => {
 
   return (
     <form onSubmit={filling}>
-      <div className="SelectCar" style={{zIndex:'99999'}}>
+      <div className="SelectCar" style={{ zIndex: "99999" }}>
         <div className="addCar">
           <div className="columns">
             <div className="column is-1">
@@ -171,13 +178,18 @@ const SelectCar = () => {
                     className="ml-96 "
                     type="file"
                     // onChange={handleFileChange}
-                    onChange={(e) => {setFiles(e.target.files)
-                            handleFileChange(e)
+                    onChange={(e) => {
+                      setFiles(e.target.files);
+                      handleFileChange(e);
                     }}
                     // value={files}
                   />
-                  <button className="add_image1 custom-btn-1 btn-140" type="button" onClick={handleClick}>
-                    <BiImageAdd className=" ml-60"/>
+                  <button
+                    className="add_image1 custom-btn-1 btn-140"
+                    type="button"
+                    onClick={handleClick}
+                  >
+                    <BiImageAdd className=" ml-60" />
                   </button>
                 </div>
               </div>
@@ -188,12 +200,20 @@ const SelectCar = () => {
             <div className="columns">
               <div className="column is-1">
                 {/* <Link to="/"> */}
-                  <Link to='/' type='button' className="custom-btn-1 btn-311 buttonnn-1112"><span>Yopish</span></Link>
+                <Link
+                  to="/"
+                  type="button"
+                  className="custom-btn-1 btn-311 buttonnn-1112"
+                >
+                  <span>Yopish</span>
+                </Link>
                 {/* </Link> */}
               </div>
               <ToastContainer />
               <div className="column">
-                <button className=" custom-btn-1 btn-3 buttonnn-1113 text-white "><span>Qo'shish</span></button>
+                <button className=" custom-btn-1 btn-3 buttonnn-1113 text-white ">
+                  <span>Qo'shish</span>
+                </button>
               </div>
             </div>
           </div>

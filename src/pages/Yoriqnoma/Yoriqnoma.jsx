@@ -7,7 +7,7 @@ import { PiCarProfileLight } from "react-icons/pi";
 import { CiCircleQuestion } from "react-icons/ci";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Infors from '../../components/Infors';
 
 const Yoriqnoma = () => {

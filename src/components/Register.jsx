@@ -1,14 +1,46 @@
-import React from 'react'
+import React, { useState , useRef} from 'react'
 import { HiOutlinePhone } from "react-icons/hi";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { FaRegCheckCircle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import { logo, logo3 } from '../index';
 import { logo } from '../assets';
 import { logo3 } from '../assets';
+import { VERIFICATION } from '../urls';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
+
+  const [email , setEmail] = useState("")
+  const [username , setUsername] = useState("")
+  const [password , setPassword] = useState("")
+  const [password2 , setPassword2] = useState("")
+
+  let navigate = useNavigate()
+
+  const notify = () => toast.success("You successfully signed up");
+
+  const register = event => {
+      event.preventDefault()
+     
+      if(password === password2) {
+          axios.post("http://localhost:1337/api/users", {username , email , password , confirmed: true, role: 1 })
+          .then(res => {
+            setTimeout(() => {
+              navigate("/login");
+            }, 1500);
+            notify()
+        })
+          .catch(err => console.log(err))
+      } else {
+          throw Error('Password do not match')
+      }
+  }
+
+
   return (
     <div className="register">
       <div className="r-top">
@@ -19,27 +51,65 @@ const Register = () => {
       <div className="r-parent">
         <div className="r-left">
          <p>Saytimizdan foydalanish uchun birinchi ro'yxatdan o'ting</p>
-         <Link to='/login'>
+  
          <button><FaArrowAltCircleRight /></button>
-         </Link>
+
         </div>
         <div className="r-center">
-        <div className='r-register'>
-      <div className="logo">
-        <img src={logo} alt="" />
-        <p className='r-title'>
-          Road24
-        </p>
-      </div>
-      <div className="r-btn">
-        <Link to="/login">
-        <button >
-        <HiOutlinePhone />
-        Telefon raqam orqali kirish
-        </button>
-        </Link>
-      </div>
-    </div>
+          <form onSubmit={register}>
+            <div className="r-register">
+            {/* <div className="logo">
+              <img src={logo} alt="" />
+              <p className="r-title">Road24</p>
+            </div> */}
+            <div className="l-title">
+              <p style={{fontWeight:'600'}}>Register</p>
+            </div>
+            <div className="l-input ml-7 w-72 h-10">
+              <input
+                  type="text"
+                  id='username'
+                  className='input'
+                  onInput={event => setUsername(event.target.value)}
+                  value={username}
+                  placeholder='Username ni kiriting'
+              />
+            </div>
+            <div className="l-input ml-7 w-72 h-10">
+              <input
+                  type="email"
+                  id='email'
+                  className='input'
+                  onInput={event => setEmail(event.target.value)}
+                  value={email}
+                  placeholder='email'
+              />
+            </div>
+            <div className="l-input ml-7 w-72 h-10">
+              <input
+                  type='password'
+                  id='password'
+                  className='input'
+                  onInput={event => setPassword(event.target.value)}
+                  value={password}
+                  placeholder='parol'
+              />
+            </div>
+            <div className="l-input ml-7 w-72 h-10">
+              <input
+                  type='password'
+                  id='password2'
+                  className='input'
+                  onInput={event => setPassword2(event.target.value)}
+                  value={password2}
+                  placeholder='parolni tasdiqlang'
+              />
+            </div>
+            <ToastContainer />
+              <button className='mt-2 text-white px-7 py-2 rounded bg-slate-500 hover:bg-zinc-400 hover:text-black transition-all'>Submit</button>
+          </div>
+            <Link to='/login' className='flex justify-center items-center mt-2 -mb-2 text-blue-400'>akkaunt xbormi?</Link>
+          </form>
         </div>
         <div className="r-right">
         <div className="texts">

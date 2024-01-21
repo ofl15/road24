@@ -17,6 +17,8 @@ const Card = () => {
 
     const navigate = useNavigate()
 
+    
+
     const createCard = (e) => {
 
         axios
@@ -108,6 +110,14 @@ const Card = () => {
     }
       
 
+
+    const isAuthenticated = localStorage.getItem("user") && localStorage.getItem("token")
+  
+  
+    if (!isAuthenticated) {
+      return navigate('/login')
+    }
+  
   return (
     <div className='Card Main grid grid-cols-2 gap-4'>
 

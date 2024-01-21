@@ -265,7 +265,7 @@ button:hover {
 
 .tolovlar {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 49.4% 50.6%;
 }
 
 .margin-t {
@@ -315,7 +315,7 @@ button:hover {
 
 .sozlamalar { 
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 49.4% 50.6%;
 }
 
 
@@ -334,10 +334,13 @@ button:hover {
 
 .s-item-one p {
   color: #fff;
-  padding: 14px;
+  padding: 0 14px;
   border-radius: 5px;
   background-color: #868686;
   margin-left: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .s-item {
@@ -1173,4 +1176,5 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
   left: 0%;
   top: 20%;
 }
+
 

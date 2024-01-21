@@ -25,6 +25,15 @@ const AddCar = () => {
     }
   }
 
+  
+  const isAuthenticated = localStorage.getItem("user") && localStorage.getItem("token")
+
+
+  if (!isAuthenticated) {
+    return navigate('/login')
+  }
+
+
   return (
     <div className="AddCar">
       <div className="box">

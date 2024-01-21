@@ -3,6 +3,7 @@ import axios from "axios";
 import { CARS } from "../urls";
 import Cars from "../components/Cars";
 import Car from "../components/Car";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
   const [cars, setCars] = useState([]);
@@ -17,6 +18,15 @@ const Main = () => {
   useEffect(() => {
     load();
   }, []);
+
+
+  const navigate = useNavigate()
+  const isAuthenticated = localStorage.getItem("user") && localStorage.getItem("token")
+
+
+  if (!isAuthenticated) {
+    return navigate('/login')
+  }
 
   return (
     <div>
