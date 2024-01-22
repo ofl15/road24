@@ -28,7 +28,9 @@ import Card from './pages/Card'
 import AddImage from './components/AddImage'
 import FineDetail from './pages/FineDetail'
 import Contact from './components/Contact'
-import { Navigate } from 'react-router-dom'
+import Gas from './components/Gas'
+import CarOil from './components/CarOil'
+import FinesTheme from './pages/YHQ'
 
 const Router = () => {
 
@@ -69,6 +71,9 @@ const Router = () => {
         <Route exact path='/add-image' Component={AddImage}/>
         <Route exact path="/fine/:id" Component={FineDetail}/>
         <Route exact path="/contact" Component={Contact}/>
+        <Route exact path="/gas" Component={Gas}/>
+        <Route exact path="/oil" Component={CarOil}/>
+        <Route exact path="/finetheme" Component={FinesTheme}/>
       </Routes>
       </div>
     </div>

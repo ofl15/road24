@@ -20,12 +20,12 @@ const Yoriqnoma = () => {
       <Infors />
     <div className="signs" >
         <div className="flex py-3   grid-cols-2 gap-4">
-            <div className="max-w-sm rounded overflow-hidden shadow-lg pr-12 pb-5 cursor-pointer">
+            <Link to='/finetheme' className="max-w-sm rounded overflow-hidden shadow-lg pr-12 pb-5 cursor-pointer">
                 <div className='pl-16 pt-3 pb-3 pr-2 '>
                   < TiCancel style={{opacity:'0.7', marginLeft:'27px'}} className='mt-8 justify-center items-center flex text-6xl'/>
                   <h2 className=' text-xl justify-center items-center flex ' style={{fontWeight:'600'}}> Jarimalar YHQ</h2>
                 </div>
-            </div>
+            </Link>
             <div className="max-w-sm rounded overflow-hidden shadow-lg pr-5 cursor-pointer" style={{width:'252px'}}>
               <Link to='/manzillar'>
                 <div className='pl-7 pt-3 pb-3 pr-2' >

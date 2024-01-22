@@ -3,15 +3,17 @@ import { IoIosArrowBack } from "react-icons/io";
 import {Link } from "react-router-dom"
 import { FaChevronRight } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
+import Infors from '../../components/Infors';
 
 
 function Manzilar() {
   return (
-    <>
+    <div className='grid grid-cols-2 gap-4'>
+      <Infors />
     <div className="Manzilar">
         <div className="hamma12">
     <div className="bwdauyu">
-        <Link className='btnishonchnoma' to="/yoriqnoma" type='button'><IoIosArrowBack/></Link>
+        <Link className='btnishonchnoma -ml-14' to="/yoriqnoma" type='button'><IoIosArrowBack/></Link>
         <p className='text232'>Manzilar(Texnik ko'rik va  Texpasport)</p>
     </div>
     <br />
@@ -32,101 +34,101 @@ function Manzilar() {
     </div>
     <div className="tr">
     <h1 className='op'>Namangan viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Andijon viloyati</h1><br />
-    <FaChevronRight />
+    <FaChevronRight className='qqrr' />
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Qashqadaryo viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Surxandaryo viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Buxoro viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Navoiy viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Xorazm viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Qaraqalpog'iston <br /> Respublikasi</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Toshkent shahri</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Toshkent viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Sirdaryo viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Jisax viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Samarqand viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight  className='qqrr'/>
     </div>
     <div className="rt">
     <hr />
     </div>
     <div className="tr">
     <h1 className='op'>Farg'ona  viloyati</h1>
-    <FaChevronRight />
+    <FaChevronRight className='qqrr' />
     </div>
     </div>
-    </>
+    </div>
   )
 }
 

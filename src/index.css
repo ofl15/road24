@@ -412,7 +412,7 @@ button:hover {
 .btnishonchnoma{
   background-color: rgb(177, 175, 175);
   font-size: 20px;
-  padding: 20px;
+  padding: 15px;
   margin-top: 1%;
   color: #fff;
   border-radius: 50%;
@@ -420,18 +420,18 @@ button:hover {
 .box11{
   display: flex;
   gap: 320px;
-  margin-left: 15%;
+  /* margin-left: 15%; */
 }
 .text1{
-  margin-top: -5%;
-
+  margin-top: -10%;
+  margin-left: -27%;
 }
 .text23{
-  margin-left: 30%;
+  /* margin-left: 30%; */
   font-size: 20px;
 }
 .inp11{
-  margin-left: 30%;
+  /* margin-left: 30%; */
   border: 2px solid rgb(63, 63, 63);
   background-color: rgb(230, 230, 230);
   border-radius: 5px;
@@ -440,17 +440,17 @@ button:hover {
 }
 .boxqw{
   display: flex;
-  margin-left: 29%;
+  /* margin-left: 29%; */
   gap: 13%;
 }
 .boxpo{
   display: flex;
-  margin-left: 29%;
+  /* margin-left: 29%; */
   gap: 300px;
 }
 .boxqws{
   display: flex;
-  margin-left: 29%;
+  /* margin-left: 29%; */
   gap: 31%;
   font-size: 20px;
 }
@@ -463,7 +463,7 @@ button:hover {
   
 }
 .www{
-  margin-left: 29%;
+  /* margin-left: 29%; */
   border: 2px solid rgb(63, 63, 63);
   padding: 15px 235px;
   border-radius: 10px;
@@ -474,20 +474,22 @@ button:hover {
   padding: 15px 197px;
   background-color: rgb(230, 230, 230);
   border: 2px solid rgb(63, 63, 63);
-  margin-left: 29%;
+  /* margin-left: 29%; */
   border-radius: 10px;
   text-align: center;
 
 }
 .boxinp{
   display: flex;
-  margin-left: 200px;
-  margin-right: 500px;
+  /* margin-left: 200px; */
+  /* margin-right: 500px; */
 }
 
 /* ishonchnoma */
 .Manzilar{
   padding: 10px ;
+  overflow: scroll;
+  height: 91vh;
 }
 .bwdauyu{
       display: flex;
@@ -511,8 +513,8 @@ button:hover {
   font-size: 20px;
   border: 3px solid green;
   background-color: rgb(223, 221, 221);
-  margin-left: 35%;
-  margin-right: 35%;
+  /* margin-left: 35%;
+  margin-right: 35%; */
   padding: 10px;
   border-radius: 10px;
 }
@@ -522,13 +524,22 @@ button:hover {
   font-size: 20px;
 }
 .rt{
-  padding:20px 100px;
+  padding:20px 0;
   
 }
 .tr{
   display: flex;
-  gap: 50px;
-  justify-content: center;
+  cursor: pointer;
+  justify-content: space-between; 
+}
+
+.qqrr{
+  margin-top: 7px;
+  font-size: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  opacity: .6;
 }
 
 /* manzillar */

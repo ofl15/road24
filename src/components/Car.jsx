@@ -79,7 +79,7 @@ const Car = () => {
         </div>
     </div>
     <div className="flex py-3 grid-cols-2 gap-4">
-        <div className="max-w-sm rounded overflow-hidden shadow-lg  cursor-pointer" style={{width:'252px'}}>
+        <Link to='/oil' className="max-w-sm rounded overflow-hidden shadow-lg  cursor-pointer" style={{width:'252px'}}>
             <div className='pl-5 pt-3 pb-3 pr-2'>
               < BsFillFuelPumpFill style={{opacity:'0.6'}} className=' text-2xl'/>
               <h2 className=' text-lg'> Avtomobil moyi</h2>
@@ -87,14 +87,14 @@ const Car = () => {
               <progress  max="100" value="55" className=' bg-blue-800' style={{borderRadius:'30%' , height:'7px' }}></progress>
               <h2 className=' text-sm ' style={{opacity:'0.5'}}>15-fevral 2024</h2>
             </div>
-        </div>
-        <div className=" rounded overflow-hidden shadow-lg cursor-pointer" style={{width:'252px'}}>
+        </Link>
+        <Link to='/gas' className=" rounded overflow-hidden shadow-lg cursor-pointer" style={{width:'252px'}}>
             <div className='pl-5 pt-3 pb-3 pr-2'>
               <BsFillFuelPumpFill style={{opacity:'0.6'}} className=' text-2xl' />
               <h2 className=' text-lg' style={{opacity:'0.7'}}>Gaz</h2>
               <h2 className=' text-sm ' style={{opacity:'0.5'}}>Muddati tugashdan oldin eslatmalarni olish uchun ma'lumot qo'shing</h2>
             </div>
-        </div>
+        </Link>
     </div>
   </div>
     {/* <hr style={{width:"202%" , border:'solid 2px #198e7c'}}/> */}
