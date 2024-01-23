@@ -11,7 +11,7 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { jsPDF } from "jspdf";
-
+import finePhoto from '../assets/finePhoto.jpg'
 
 
 export default function FineDetail() {
@@ -274,19 +274,23 @@ export default function FineDetail() {
                 <h3>Qoidabuzarlik joyi :</h3>
                 <p>{address}</p>
               </div>
+              <div className="jarimalar-item">
+                <h3>JARIMA SUMMASI (chegirmasiz)</h3>
+                <h4 className=" text-2xl text-red-600" style={{fontWeight:'500'}}>{maskNumbers(summa)} so'm</h4>
+              </div>
             </div>
             <div className="location">
-              <iframe
-                loading="lazy"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49060.96211378192!2d64.38159847489527!3d39.77759498159774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f50060e65993cd5%3A0xc87beaf40e48e767!2z0JHRg9GF0LDRgNCwLCDQo9C30LHQtdC60LjRgdGC0LDQvQ!5e0!3m2!1sru!2s"
-              ></iframe>
+              <div className="child11">
+              <img src={finePhoto} alt="" />
+              </div>
+              <div className="child22">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d911.7083157160358!2d64.44530096272233!3d39.77088603029141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1706017406186!5m2!1sru!2s" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
             </div>
           </div>
         )}
 
         <div className="end">
-          <h2>JARIMA SUMMASI (chegirmasiz)</h2>
-          <span>{maskNumbers(summa)} so'm</span>
 
           <div className="end-f">
             {boolean === false ? (

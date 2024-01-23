@@ -71,12 +71,6 @@
       "relation": "oneToMany",
       "target": "api::car.car",
       "mappedBy": "users_permissions_user"
-    },
-    "fines": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::fine.fine",
-      "mappedBy": "users_permissions_user"
     }
   }
 }

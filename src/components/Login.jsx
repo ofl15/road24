@@ -59,7 +59,7 @@ const Login = () => {
               <p className="r-title">Road24</p>
             </div> */}
             <div className="l-title">
-              <p style={{fontWeight:'600'}}>Register</p>
+              <p style={{fontWeight:'600'}}>Login</p>
             </div>
             <div className="l-input ml-7 w-72 h-10">
               <input

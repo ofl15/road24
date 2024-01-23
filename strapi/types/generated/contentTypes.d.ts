@@ -442,11 +442,6 @@ export interface ApiFineFine extends Schema.CollectionType {
     date: Attribute.String;
     releaseDate: Attribute.String;
     idnum: Attribute.String;
-    users_permissions_user: Attribute.Relation<
-      'api::fine.fine',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -838,11 +833,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'oneToMany',
       'api::car.car'
-    >;
-    fines: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::fine.fine'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

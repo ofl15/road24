@@ -1,4 +1,4 @@
-import React, { useState , useRef} from 'react'
+import React, { useState , useRef, useEffect} from 'react'
 import { HiOutlinePhone } from "react-icons/hi";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 // import { logo, logo3 } from '../index';
 import { logo } from '../assets';
 import { logo3 } from '../assets';
-import { VERIFICATION } from '../urls';
+import { USERS, VERIFICATION } from '../urls';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,13 +18,14 @@ const Register = () => {
   const [username , setUsername] = useState("")
   const [password , setPassword] = useState("")
   const [password2 , setPassword2] = useState("")
+  const [userr, setUserr] = useState({});
 
   let navigate = useNavigate()
 
   const notify = () => toast.success("You successfully signed up");
 
   const register = event => {
-      event.preventDefault()
+
      
       if(password === password2) {
           axios.post("http://localhost:1337/api/users", {username , email , password , confirmed: true, role: 1 })
@@ -40,6 +41,28 @@ const Register = () => {
       }
   }
 
+  const usr = () => {
+    axios
+      .get(USERS)
+      .then((res) => setUserr(res.data))
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    usr();
+  }, []);
+
+
+  const checking = (event) => {
+    event.preventDefault()
+
+
+    if (username && email && password && password2) {
+      register()
+    } else {
+      toast.warn(`bo'sh joylarni to'diring`)
+    }
+  }
 
   return (
     <div className="register">
@@ -56,7 +79,7 @@ const Register = () => {
 
         </div>
         <div className="r-center">
-          <form onSubmit={register}>
+          <form onSubmit={checking}>
             <div className="r-register">
             {/* <div className="logo">
               <img src={logo} alt="" />
@@ -108,7 +131,7 @@ const Register = () => {
             <ToastContainer />
               <button className='mt-2 text-white px-7 py-2 rounded bg-slate-500 hover:bg-zinc-400 hover:text-black transition-all'>Submit</button>
           </div>
-            <Link to='/login' className='flex justify-center items-center mt-2 -mb-2 text-blue-400'>akkaunt xbormi?</Link>
+            <Link to='/login' className='flex justify-center items-center mt-2 -mb-2 text-blue-400'>akkaunt bormi?</Link>
           </form>
         </div>
         <div className="r-right">

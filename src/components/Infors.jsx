@@ -4,6 +4,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { CARS, USER, USERS } from '../urls';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { AiOutlinePlus } from "react-icons/ai";
 
 const Infors = () => {
   const [userr, setUserr] = useState({});
@@ -70,11 +71,12 @@ const Infors = () => {
         </Slider>
       </CarouselProvider>
     ) : (
-      <div className='mt-80' style={{ textAlign: 'center', justifyContent: 'center', alignItems: 'center' }}>
+      <Link to='addCar' className='mt-80 fixed' style={{ textAlign: 'center', justifyContent: 'center', alignItems: 'center' , zIndex:'6000' , width:'100vh' , height:'100vh ' }}>
         <h1 type='button' className='text-2xl' style={{ fontWeight: '600' }}>
           Mashina qo'shilmagan
+        {/* <AiOutlinePlus className='flex justify-center items-center ml-80 '/> */}
         </h1>
-      </div>
+      </Link>
     )}
   </div>
   );

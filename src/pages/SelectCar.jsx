@@ -95,7 +95,7 @@ const SelectCar = () => {
           </div>
           {/* ->><LINK><<- */}
           <div className="infor">
-            <button className="info">
+            <div className="info cursor-pointer">
               <button className="infomation">
                 <PiWarningCircle />
               </button>
@@ -103,7 +103,7 @@ const SelectCar = () => {
               <div className="go">
                 <i className="bi bi-chevron-right"></i>
               </div>
-            </button>
+            </div>
           </div>
           {/* -> </LINK> <- тут будет линк "BILISH MIHIM"  */}
           {/* --------------------------------------------------------------------------------------------------------- */}
@@ -123,7 +123,9 @@ const SelectCar = () => {
                   fontSize: "24px",
                   padding: "3px 0",
                 }}
-                onChange={(e) => setMark(e.target.value)}
+                onChange={(e) => {
+                  setMark(e.target.value.toUpperCase()); // Convert to uppercase
+                }}
                 value={mark}
               />
             </div>
@@ -141,7 +143,9 @@ const SelectCar = () => {
                   fontSize: "24px",
                   padding: "3px 0",
                 }}
-                onChange={(e) => setModel(e.target.value)}
+                onChange={(e) => {
+                  setModel(e.target.value.toUpperCase()); // Convert to uppercase
+                }}
                 value={model}
               />
             </div>
