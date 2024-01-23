@@ -508,3 +508,47 @@ width: 90%;
     background: #555; 
   }
 
+  .notfound {
+    display: flex;
+    
+    justify-content: center;
+    height: 681px;
+    background: #b8b8b8 ;
+  
+    .n-items {
+      text-align: center;
+      margin-top: 180px;
+
+      h1 {
+        font-weight: 700;
+        font-style: italic;
+        font-size: 4em;
+        margin: 0;
+        color: #353535;
+      }
+  
+      button {
+        border-radius: 5px;
+        display: flex;
+        margin-left: 30%;
+        margin-top: 20px;
+        background-color: #383838; 
+        color: #fff; 
+        font-size: 1.2em;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #d4d4d4; 
+          background-color: #474747;
+        }
+  
+        svg {
+          margin-top: 5px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }

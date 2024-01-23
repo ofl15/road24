@@ -31,6 +31,7 @@ import Contact from './components/Contact'
 import Gas from './components/Gas'
 import CarOil from './components/CarOil'
 import FinesTheme from './pages/YHQ'
+import NotFound from './components/NotFound'
 
 const Router = () => {
 
@@ -74,6 +75,7 @@ const Router = () => {
         <Route exact path="/gas" Component={Gas}/>
         <Route exact path="/oil" Component={CarOil}/>
         <Route exact path="/finetheme" Component={FinesTheme}/>
+        <Route exact path="*" Component={NotFound}/>
       </Routes>
       </div>
     </div>

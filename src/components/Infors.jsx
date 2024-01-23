@@ -45,7 +45,7 @@ const Infors = () => {
           {userr.cars.map((car) => (
             <Slide index={car.id} key={car.id}>
               <div className='borderr flex px-3 py-3 ml-28 mt-16'>
-                <div className='max-w-sm rounded overflow-hidden shadow-lg'>
+                <div className='max-w-sm rounded overflow-hidden '>
                   {car.image && car.image.formats && car.image.formats.large ? (
                     <img
                       className='w-full'

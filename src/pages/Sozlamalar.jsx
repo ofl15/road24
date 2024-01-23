@@ -45,7 +45,6 @@ export default function Sozlamalar() {
             <div className="s-icon">
             <RiUserSettingsLine />
             </div>
-              <button className='s-btn'>TASDIQLANMAGAN</button>
               <p>+998907189575</p>
             </div>
             <Link to='/card' className="s-item">
