@@ -93,7 +93,14 @@ tafsilotlarini ko'rib chiqib, qoyidagilarni ANIQLADIM:`, 20, 60);
 
 
   const openModal = () => {
+    if(!card) {
+      toast.warn("Karta qo'shilmagan")
+      setTimeout(() => {
+        navigate('/card')
+      }, 2000);
+    } else {
     setIsModalOpen(true);
+    }
   };
   
   const closeModal = () => {
@@ -156,12 +163,6 @@ tafsilotlarini ko'rib chiqib, qoyidagilarni ANIQLADIM:`, 20, 60);
       if (moneyy > summa ) {
         handlePayment();
         calculate();
-      } else if(!card) {
-        closeModal()
-        toast.warn("Karta qo'shilmagan")
-        setTimeout(() => {
-          navigate('/card')
-        }, 2000);
       } else {
         closeModal()
         toast.warn("Kartangizda yetarli mablag' mavjud emas!")

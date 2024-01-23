@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { texpasport } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
-import IMask from "imask";
-import { CARS } from "../urls";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -33,7 +30,6 @@ const AddCar = () => {
     return navigate('/login')
   }
 
-
   return (
     <div className="AddCar">
       <div className="box">
@@ -44,7 +40,9 @@ const AddCar = () => {
             id="input"
             type="text"
             placeholder="80 A 777 AA"
-            onChange={(e)=>setCarNumber(e.target.value)}
+            onChange={e => {
+              setCarNumber(e.target.value);
+          }}
             value={carNumber}
           />
           <br />
