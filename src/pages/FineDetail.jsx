@@ -22,46 +22,72 @@ export default function FineDetail() {
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false);
 
+  let paymentStatusText = "";
+  if (fine && fine.attributes.is_payment) {
+    paymentStatusText = "Jarima to'langan" ;
+  } else {
+    paymentStatusText = "Jarima to'lanmagan";
+  }
 
+  const generatePDF = () => {
+    const pdf = new jsPDF();
+  
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(16);
+  
+    pdf.text("ROAD 24", 80, 10);
+  
+    pdf.setFontSize(12);
+    pdf.setFont("helvetica", "normal");
+    
+    pdf.text(`${releaseDate}`, 10, 30)
+    pdf.text(`Jarima raqami:${random}`, 75, 30)
+    pdf.text("Buxoro viloyati", 170, 30)
 
- const generatePDF = () => {
-  const pdf = new jsPDF();
+    pdf.setFont("bold")
+    pdf.text("Men, BUXORO VILOYATI YHXX GAI inspektori QURBONOV SHAVKAT QO'LDOSH OG'LI", 10, 50)
+    pdf.setFont("helvetica", "normal");
+    pdf.text("maxsus avtomatlashtirilgan foto va video moslamalari orqali qayd etilgan yo'l harakati qoidalarini", 10, 55)
+    pdf.text("buzulishi tafsilotlarini ko'rib chiqib, qoyidagilarni aniqladim:", 10, 60)
+    pdf.setFont("italic");
+    pdf.text(`Qoidabuzarlik sanasi: ${date} `, 10, 70)
+    pdf.text(`Qoidabuzarlik moddasi: ${modda}`, 10, 78)
+    pdf.text(`Qoidabuzarlik tavfsifi: ${tavsif}`, 10, 86)
+    pdf.text(`Qoidabuzarlik joyi: ${address}`, 10, 94)
+    pdf.text(`Jarima summasi: ${summa} so'm`, 10, 102)
+    pdf.text(`Jarima to'langani : ${paymentStatusText}`, 10, 110)
+    pdf.setFont("helvetica", "bold");
+    pdf.text(`O‘zbekiston Respublikasi MJtKning ${modda} - moddasiga asoslangan holda, QAROR :`, 10, 118)
+    pdf.text("QILAMAN:", 10, 126)
+    pdf.setFont("helvetica", "normal");
+    pdf.text(`${model} rusumli, ${number} davlat raqam belgili transport vositasiga (${releaseDate}) O‘zbekiston  `, 10 , 134)
+    pdf.text(`Respublikasi MJtKning ${modda} moddasiga asosan 330 000 so'm miqdorida jarima belgilansin.` , 10 , 142)
+    pdf.text("Mazkur qaror ustidan e’tirozingiz bo‘lsa +998 (65) 221-86-05 telefon raqamiga soat 09:00", 10 , 150)
+    pdf.text(" dan 18:00 gacha murojaat qilishingizni tavsiya qilamiz", 10 , 158)
+    pdf.setFont("helvetica", "bold");
+    pdf.text("Huquq va majburiyatlaringiz:" , 10, 166)
+    pdf.setFont("helvetica", "normal");
+    pdf.setFontSize(10);
+    pdf.text("Tayinlangan jarimani qaror chiqarilgan kundan boshlab 60 (oltmish) kundan kechiktirmay, ushbu qaror xususida shikoyat ", 10 , 175)
+    pdf.text("berilgan yoki protest bildirilgan taqdirda esa, shikoyat yoki protest qanoatlantirilmaganligi to‘g‘risida xabar berilgan", 10 , 180)
+    pdf.text("kundan e’tiboran 30 (o‘ttiz) kundan kechiktirmay to‘lashingiz lozim.  ", 10 , 185)
+    pdf.text("Mazkur qaror chiqarilgan kundan e’tiboran 60 (oltmish) kun o‘tgach, jarima to‘lanmagan taqdirda, transport vositangiz", 10, 192)
+    pdf.text("qarorning ijrosi yuzasidan ish yuritish tugaguniga  qadar ushlab turiladi.", 10, 197)
+    pdf.text("Mazkur qaror ustidan yuqori turuvchi organga (mansabdor shaxsga) yoki jinoyat ishlar bo‘yicha tuman (shahar) sudyasiga", 10, 204)
+    pdf.text("uning nusxasini olgan kuningizdan boshlab 10 (o‘n) kun ichida shikoyat berishingiz mumkin. Shikoyat ma’muriy huquqbu", 10, 209)
+    pdf.text("zarlik to‘g‘risidagi ish yuzasidan qaror qabul qilgan organ (mansabdor shaxs) orqali yoki bevosita shikoyat yo‘llangan", 10, 214)
+    pdf.text("sudga yuboriladi.", 10, 219)
+    pdf.text("O‘zbekiston Respublikasi Ma’muriy javobgarlik to‘g‘risidagi kodeksi 3321-moddasiga muvofiq huquqbuzar unga jarima ", 10, 226)
+    pdf.text("to‘g‘risidagi qaror topshirilgan kundan  boshlab o‘n besh kun ichida jarima miqdorining 50 foizini, o‘ttiz kun ichida 70", 10, 231)
+    pdf.text("foizini ixtiyoriy ravishda to‘lagan taqdirda, u jarimaning qolgan qismini to‘lashdan ozod qilinadi, quydagilar mustasno", 10, 236)
+    pdf.text("ushbu Kodeksning 131, 132, 136 va 140-moddalarida nazarda tutilgan huquqbuzarliklar sodir etilganda;", 10, 243 )
+    pdf.text("jarima solish to‘g‘risidagi qaror ustidan shikoyat qilinganda yoki protest bildirilganda;", 10, 248)
+    pdf.text("xuddi shunday huquqbuzarlik ma’muriy jazo chorasi qo‘llanilganidan keyin bir yil davomida takror sodir etilganda.", 10, 253)
 
-  // Set font size and style
-  pdf.setFont("helvetica", "bold");
-  pdf.setFontSize(16);
-
-  // Tepada joylashgan matn
-  pdf.text("ROAD 24", 80, 10);
-
-  // Set font size and style for regular text
-  pdf.setFontSize(12);
-  pdf.setFont("helvetica", "normal");
-
-  // PDF-ga kerakli ma'lumotlarni qo'shing with styles
-  pdf.text(`Jarima raqami:${random} - raqamli jarima solish to'g'risidagi qaror`, 20, 30);
-  pdf.text(`${date} kuni BUXORO VILOYATI BUXORO SHAHAR ${address} da ro'yxatda turovchi XUDOYBERDI BAHODIR SHONAZAROVICH (08.08.1982) fuqaro`, 20, 40);
-  pdf.text(`Men, BUXORO VILOYATI YHXX GAI inspektori QURBONOV SHAVKAT QO'LDOSH OG'LI
-maxsus avtomatlashtirilgan foto va video moslamalari orqali qayd etilgan yo'l harakati qoidalarini buzulishi
-tafsilotlarini ko'rib chiqib, qoyidagilarni ANIQLADIM:`, 20, 60);
-
-  pdf.setTextColor('blue')
-  pdf.setFont("helvetica", "bold");
-
-  pdf.text(`${model}`, 20, 90);
-  pdf.text(`${number}`, 20, 100);
-
-  pdf.setFontSize(12);
-  pdf.setFont("helvetica", "normal");
-  pdf.setTextColor('black')
-
-  pdf.text(`Qoidabuzarlik joyi: ${address}`, 20, 70);
-  pdf.addImage(`${thumb}`, 'JPEG', 15, 70, 180, 100);
-
-  setTimeout(() => {
-    pdf.save("jarima.pdf");
-  }, 1000);
-};
+    // setTimeout(() => {
+      pdf.save("jarima.pdf");
+    // }, 1000);
+  };
 
   
   const handlePayment = () => {
@@ -127,13 +153,13 @@ tafsilotlarini ko'rib chiqib, qoyidagilarni ANIQLADIM:`, 20, 60);
   const summa = fine ?  fine.attributes.summa : ''
   const tavsif = fine ?  fine.attributes.Tavsif : ''
   const address = fine ?  fine.attributes.address : ''
-  const date = fine ?  fine.attributes.releaseDate : ''
+  const date = fine ?  fine.attributes.date : ''
   const number = fine ?  fine.attributes.car.data.attributes.number : ''
   const thumb = fine ?  fine.attributes.car.data.attributes.image.data.attributes.formats.large.url : ''
-  const model = fine ?  fine.attributes.car.data.attributes.model : ''
+  const model = fine ?  fine.attributes.car.data.attributes.Model : ''
   const random = fine ?  fine.attributes.idnum : ''
   const boolean = fine ?  fine.attributes.is_payment : ''
-  
+  const releaseDate = fine ? fine.attributes.releaseDate : ''
   
   const cardNum = card ? card.attributes.num : "";
   const cardDate = card ? card.attributes.date : "";
@@ -231,7 +257,7 @@ tafsilotlarini ko'rib chiqib, qoyidagilarni ANIQLADIM:`, 20, 60);
             <div className="jarimalar-items">
               <div className="jarimalar-item">
                 <h3>Qoidabuzarlik sanasi :</h3>
-                <p>{date}</p>
+                <p>{releaseDate}</p>
               </div>
               <div className="jarimalar-item">
                 <h3>Qoidabuzarlik moddasi :</h3>
