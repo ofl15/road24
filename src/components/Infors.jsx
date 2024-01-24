@@ -23,7 +23,6 @@ const Infors = () => {
     usr();
   }, []);
 
-  console.log('userr:', userr);
 
   const navigate = useNavigate()
   const isAuthenticated = localStorage.getItem("user") && localStorage.getItem("token")
@@ -71,7 +70,7 @@ const Infors = () => {
         </Slider>
       </CarouselProvider>
     ) : (
-      <Link to='addCar' className='mt-80 fixed' style={{ textAlign: 'center', justifyContent: 'center', alignItems: 'center' , zIndex:'6000' , width:'100vh' , height:'100vh ' }}>
+      <Link to='/addCar' className='mt-80 fixed' style={{ textAlign: 'center', justifyContent: 'center', alignItems: 'center' , zIndex:'6000' , width:'100vh' , height:'100vh ' }}>
         <h1 type='button' className='text-2xl' style={{ fontWeight: '600' }}>
           Mashina qo'shilmagan
         {/* <AiOutlinePlus className='flex justify-center items-center ml-80 '/> */}

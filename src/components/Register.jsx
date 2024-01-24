@@ -19,6 +19,7 @@ const Register = () => {
   const [password , setPassword] = useState("")
   const [password2 , setPassword2] = useState("")
   const [userr, setUserr] = useState({});
+  const [carsList, setCarsList] = useState([]);
 
   let navigate = useNavigate()
 
@@ -52,13 +53,35 @@ const Register = () => {
     usr();
   }, []);
 
+  const fetchCars = () => {
+    axios
+      .get(USERS)
+      .then((res) => {
+        const carNumbers = res.data.map(
+          (carData) => carData.username
+        );
+        setCarsList(carNumbers);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    fetchCars();
+  }, []);
+
+
+
 
   const checking = (event) => {
     event.preventDefault()
 
 
     if (username && email && password && password2) {
-      register()
+      if (carsList.includes(username)) {
+      toast.warn(`Kiritilgan username mavjud`)
+      } else {
+        register()
+      }
     } else {
       toast.warn(`bo'sh joylarni to'diring`)
     }

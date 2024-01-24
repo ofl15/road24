@@ -48,19 +48,19 @@ const Sidebar = () => {
         </div>
         ) : (
           <div className=' border-r-2 fixed ' style={{height: '91vh' , width:'12%'}} >
-          <Link className=' block  border-y-2 cursor-pointer' style={{padding: '56px 0'}}>
+          <Link to='/' className=' block  border-y-2 cursor-pointer' style={{padding: '56px 0'}}>
             < FaCar  className=' justify-center items-center text-2xl flex' style={{ width: '100vh', color:'#198e7c' , position:'relative' , right:'280px'}}/>
             <p className=' justify-center items-center text-2xl flex' style={{ width: '100vh', color:'#198e7c' , position:'relative' , right:'280px'}}>Garaj</p>
           </Link>
-          <Link className=' block border-y-2 cursor-pointer' style={{padding: '56px 0'}}>
+          <div className=' block border-y-2 cursor-pointer' style={{padding: '56px 0'}}>
             < MdHistory  className=' justify-center items-center text-2xl flex' style={{ width: '100vh', color:'#198e7c' , position:'relative' , right:'280px'}}/>
             <p className=' justify-center items-center text-2xl flex' style={{ width: '100vh', color:'#198e7c' , position:'relative' , right:'280px'}}>To`lovlar</p>
-          </Link>
-          <Link className=' block border-y-2 cursor-pointer' style={{padding: '56px 0'}}>
+          </div>
+          <div className=' block border-y-2 cursor-pointer' style={{padding: '56px 0'}}>
             < BsJournalText  className=' justify-center items-center text-2xl flex' style={{ width: '100vh', color:'#198e7c' , position:'relative' , right:'280px'}}/>
             <p className=' justify-center items-center text-2xl flex' style={{ width: '100vh', color:'#198e7c' , position:'relative' , right:'280px'}}>Yo`riqnoma</p>
-          </Link>
-          <Link className=' block border-y-2 cursor-pointer' style={{padding: '56px 0'}}>
+          </div>
+          <Link to="/sozlamalar" className=' block border-y-2 cursor-pointer' style={{padding: '56px 0'}}>
             < IoSettingsOutline  className=' justify-center items-center text-2xl flex' style={{ width: '100vh', color:'#198e7c' , position:'relative' , right:'280px'}}/>
             <p className=' justify-center items-center text-2xl flex' style={{ width: '100vh', color:'#198e7c' , position:'relative' , right:'280px'}}>Sozlamalar</p>
           </Link>
