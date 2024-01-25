@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { CARD } from '../urls';
+import { CARD, USER_CARD } from '../urls';
 import { InputMask } from 'primereact/inputmask';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -13,7 +13,21 @@ const Card = () => {
     const [number , setNumber] = useState('')
     const [date , setDate] = useState('')
     const [holder , setHolder] = useState('')
-
+    const [userr, setUserr] = useState({});
+    const [username] = useState(JSON.parse(localStorage.getItem('user')) || []);
+  
+    const id = username.id;
+  
+    const usr = () => {
+      axios
+        .get(USER_CARD.replace('id', id))
+        .then((res) => setUserr(res.data))
+        .catch((err) => console.log(err));
+    };
+  
+    useEffect(() => {
+      usr();
+    }, []);
 
     const navigate = useNavigate()
 
@@ -27,7 +41,10 @@ const Card = () => {
               Name: holder ,
               date: date,
               num: number,
-              money: 8467450
+              money: 8467450,
+              users_permissions_user:{
+                set: [id]
+              }
             },
           })
           .then((res) => {
@@ -42,6 +59,7 @@ const Card = () => {
 
       const deleteCard = (id) => {
         let result = window.confirm("Kartani o`chirmoqchimisiz?")
+
 
         if (result === true) {
           axios
@@ -67,7 +85,7 @@ const Card = () => {
 
 
         if (number && holder && date) {
-          if (cards.length < 1) {
+          if (userr.cards.length < 1) {
             if (number.slice(0,4) === '8600' || number.slice(0,4) === '9860' || number.slice(0,3) === '561') {
               if(date.slice(0,2) <= 12 && date.slice(3,5) <= 30 && date.slice(3,5) >= 24) {
                 if (holder.length < 23) {
@@ -150,7 +168,7 @@ const Card = () => {
         </div>
                 
 {/* card */}
-        {cards && cards.map((card) => (
+        {userr.cards && userr.cards.map((card) => (
 
             <figure class="absolute m-24" style={{marginLeft:'700px'}}>
             <div class="credit-card w-max h-max relative select-none pointer-events-none">
@@ -162,7 +180,7 @@ const Card = () => {
                     <div
                     class="recto z-2 absolute overflow-hidden w-96 h-56 rounded-2xl px-8 py-6 bg-black text-white shadow-xl flex flex-col justify-end gap-6">
                     <div class="logo absolute top-6 right-8 w-16 h-8 flex justify-items-center items-center">
-                      {card.attributes.num.slice(0,4) === '9860' ? (
+                      {card.num.slice(0,4) === '9860' ? (
                         <img src={humo} alt="" className='ml-2 mt-10' /> ):
                          (<img src={uzcard} alt="" className='ml-5 mt-10' style={{width:'50px' , height:'70px'}}/>) }
                     </div>
@@ -170,17 +188,17 @@ const Card = () => {
                     <div class="pin w-11 h-7 rounded bg-yellow-100">&nbsp;</div>
 
                     <div class="number whitespace-nowrap text-2xl font-semibold" style={{fontFamily:'Courier new, mono'}}>
-                        {addStarToString(card.attributes.num)}
+                        {addStarToString(card.num)}
                     </div>
 
                     <div class="credentials flex gap-8">
                         <div class="owner flex flex-col w-max">
                             <span class="text-xs uppercase">Card holder</span>
-                            <span class="whitespace-nowrap text-lg">{card.attributes.Name}</span>
+                            <span class="whitespace-nowrap text-lg">{card.Name}</span>
                         </div>
                         <div class="expires flex flex-col w-max">
                             <span class="text-xs uppercase">Expires</span>
-                            <span class="whitespace-nowrap text-lg">{card.attributes.date}</span>
+                            <span class="whitespace-nowrap text-lg">{card.date}</span>
                         </div>
                     </div>
                 </div>

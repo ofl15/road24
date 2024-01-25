@@ -71,6 +71,12 @@
       "relation": "oneToMany",
       "target": "api::car.car",
       "mappedBy": "users_permissions_user"
+    },
+    "cards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::card.card",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

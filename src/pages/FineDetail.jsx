@@ -3,7 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { GiInfo } from "react-icons/gi";
 import { BiSolidFilePdf } from "react-icons/bi";
 import { useNavigate, useParams } from "react-router-dom";
-import { CARD, CARDD, FINE_DETAIL } from "../urls";
+import { CARD, CARDD, FINE_DETAIL, USER_CARD } from "../urls";
 import axios from "axios";
 import { humo, uzcard } from '../assets';
 import Modal from "../components/Modal";
@@ -21,6 +21,22 @@ export default function FineDetail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false);
+
+  const [userr, setUserr] = useState([]);
+  const [username] = useState(JSON.parse(localStorage.getItem('user')) || []);
+
+  const idd = username.id;
+
+  const usr = () => {
+    axios
+      .get(USER_CARD.replace('id', idd))
+      .then((res) => setUserr(res.data.cards[0]))
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    usr();
+  }, []);
 
   let paymentStatusText = "";
   if (fine && fine.attributes.is_payment) {
@@ -119,7 +135,7 @@ export default function FineDetail() {
 
 
   const openModal = () => {
-    if(!card) {
+    if(!userr) {
       toast.warn("Karta qo'shilmagan")
       setTimeout(() => {
         navigate('/card')
@@ -160,13 +176,14 @@ export default function FineDetail() {
   const random = fine ?  fine.attributes.idnum : ''
   const boolean = fine ?  fine.attributes.is_payment : ''
   const releaseDate = fine ? fine.attributes.releaseDate : ''
-  
-  const cardNum = card ? card.attributes.num : "";
-  const cardDate = card ? card.attributes.date : "";
-  const cardHolder = card ? card.attributes.Name : "";
-  const moneyy = card ? card.attributes.money : "";
-  const iddd = card ? card.id : "";
 
+  const cardNum = userr ? userr.num : '';
+  const cardDate = userr ? userr.date : '';
+  const cardHolder = userr ? userr.Name : '';
+  const moneyy = userr ? userr.money : '';
+  const iddd = userr ? userr.id : '';
+  // const iddd = userr ? userr.cards.id : '' ;
+  console.log(cardNum);
   
     const minus = moneyy - summa
   
@@ -214,17 +231,8 @@ export default function FineDetail() {
     return result;
   }
 
-    
-  const load = () => {
-    axios
-    .get(CARD)
-    .then((res) => setCard(res.data.data[0]))
-    .catch((err) => console.log(err));
-  };
-  
-  useEffect(() => {
-    load();
-  }, []);
+
+
 
   return (
 <div className="jarimalar">
@@ -329,9 +337,9 @@ export default function FineDetail() {
                     <div
                     class="recto z-2 absolute overflow-hidden w-96 h-56 rounded-2xl px-8 py-6 bg-black text-white shadow-xl flex flex-col justify-end gap-6">
                     <div class="logo absolute top-6 right-8 w-16 h-8 flex justify-items-center items-center">
-                      {cardNum.slice(0,4) === '9860' ? (
+                      {/* {cardNum.slice(0,4) === '9860' ? (
                         <img src={humo} alt="" className='ml-2 mt-10' /> ):
-                         (<img src={uzcard} alt="" className='ml-5 mt-10' style={{width:'50px' , height:'70px'}}/>) }
+                         (<img src={uzcard} alt="" className='ml-5 mt-10' style={{width:'50px' , height:'70px'}}/>) } */}
                     </div>
 
                         <div class="pin w-11 h-7 rounded bg-yellow-100">
@@ -342,7 +350,7 @@ export default function FineDetail() {
                           class="number whitespace-nowrap text-2xl font-semibold"
                           style={{ fontFamily: "Courier new, mono" }}
                         >
-                          {addStarToString(cardNum)}
+                          {cardNum}
                         </div>
 
                         <div class="credentials flex gap-8">
@@ -361,7 +369,7 @@ export default function FineDetail() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                    </div>
                 </div>
 
                 <div className="m-buttons">

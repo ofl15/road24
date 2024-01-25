@@ -411,6 +411,11 @@ export interface ApiCardCard extends Schema.CollectionType {
     date: Attribute.String;
     money: Attribute.BigInteger;
     num: Attribute.String;
+    users_permissions_user: Attribute.Relation<
+      'api::card.card',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -833,6 +838,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'oneToMany',
       'api::car.car'
+    >;
+    cards: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::card.card'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
